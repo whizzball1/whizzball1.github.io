@@ -46,6 +46,7 @@ var player = {
 };
 
 function set_cookie(cookie_name, value) {
+    "use strict";
     expiry = new Date();
     expiry.setTime(new Date().getTime() + (10 * 60 * 1000));
     var c_value = escape(btoa(JSON.stringify(value))) +
@@ -54,6 +55,7 @@ function set_cookie(cookie_name, value) {
 }
 
 function get_cookie(cookie_name) {
+    "use strict";
     var c_value = document.cookie;
     var c_start = c_value.indexOf(" " + cookie_name + "=");
     if (c_start == -1) {
@@ -70,6 +72,7 @@ function get_cookie(cookie_name) {
 }
 
 function update_view() {
+    "use strict";
     update_total_clicks();
     var eUpQuarkAutoText1 = document.getElementById("upgrade_up_quark_click_1_text");
     if (player.upgrade_up_quark_click_1_bought == "True") {
@@ -92,6 +95,7 @@ function update_view() {
 }
 
 function update_total_clicks() {
+    "use strict";
     var eUpQuark = document.getElementById("total_up_quark_clicks");
     eUpQuark.innerHTML = player.upQuarkClicks;
     var eElectron = document.getElementById("total_electron_clicks");
@@ -128,18 +132,22 @@ function update_total_clicks() {
     eLithium7.innerHTML = player.lithium7Clicks;
 }
 document.getElementById("up_quark").onclick = function () {
+    "use strict";
     player.upQuarkClicks++;
     update_total_clicks();
 };
 document.getElementById("electron").onclick = function () {
+    "use strict";
     player.electronClicks++;
     update_total_clicks();
 };
 document.getElementById("down_quark").onclick = function () {
+    "use strict";
     player.downQuarkClicks++;
     update_total_clicks();
 };
 document.getElementById("buy_up_quark_click").onclick = function () {
+    "use strict";
     if (player.upQuarkClicks < player.up_quark_click_cost) {
         return;
     }
@@ -154,6 +162,7 @@ document.getElementById("buy_up_quark_click").onclick = function () {
     update_total_clicks();
 };
 document.getElementById("buy_electron_click").onclick = function () {
+    "use strict";
     if (player.electronClicks < player.electron_click_cost) {
         return;
     }
@@ -168,6 +177,7 @@ document.getElementById("buy_electron_click").onclick = function () {
     update_total_clicks();
 };
 document.getElementById("buy_down_quark_click").onclick = function () {
+    "use strict";
     if (player.downQuarkClicks < player.down_quark_click_cost) {
         return;
     }
@@ -182,6 +192,7 @@ document.getElementById("buy_down_quark_click").onclick = function () {
     update_total_clicks();
 };
 document.getElementById("buy_proton_click").onclick = function () {
+    "use strict";
     if (player.protonClicks < player.proton_click_cost) {
         return;
     }
@@ -196,6 +207,7 @@ document.getElementById("buy_proton_click").onclick = function () {
     update_total_clicks();
 };
 document.getElementById("buy_neutron_click").onclick = function () {
+    "use strict";
     if (player.neutronClicks < player.neutron_click_cost) {
         return;
     }
@@ -210,6 +222,7 @@ document.getElementById("buy_neutron_click").onclick = function () {
     update_total_clicks();
 };
 document.getElementById("upgrade_up_quark_click_1").onclick = function () {
+    "use strict";
     if (player.upgrade_up_quark_click_1_bought == "True") {
         return;
     }
@@ -224,6 +237,7 @@ document.getElementById("upgrade_up_quark_click_1").onclick = function () {
     e.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded.";
 };
 document.getElementById("upgrade_electron_click_1").onclick = function () {
+    "use strict";
     if (player.upgrade_electron_click_1_bought == "True") {
         return;
     }
@@ -238,6 +252,7 @@ document.getElementById("upgrade_electron_click_1").onclick = function () {
     e.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded.";
 };
 document.getElementById("upgrade_down_quark_click_1").onclick = function () {
+    "use strict";
     if (player.upgrade_down_quark_click_1_bought == "True") {
         return;
     }
@@ -253,11 +268,13 @@ document.getElementById("upgrade_down_quark_click_1").onclick = function () {
 };
 
 function save_game() {
+    "use strict";
     var save_game = btoa(JSON.stringify(player));
     prompt("This is your save key. Please click inside it, select all the code using CTRL + A or Command + A, copy, and paste somewhere safe.", save_game);
 }
 
 function load_game() {
+    "use strict";
     var save_data = prompt("Please enter your save key", "save key");
     save_data = JSON.parse(atob(save_data));
     if (!("upQuarkClicks" in player)) {
@@ -396,12 +413,15 @@ function load_game() {
     update_view();
 }
 document.getElementById("load").onclick = function () {
+    "use strict";
     load_game();
 };
 document.getElementById("save").onclick = function () {
+    "use strict";
     save_game();
 };
 document.getElementById("proton").onclick = function () {
+    "use strict";
     if (player.upQuarkClicks < player.proton_up_quark_cost) {
         return;
     }
@@ -414,6 +434,7 @@ document.getElementById("proton").onclick = function () {
     update_total_clicks();
 };
 document.getElementById("neutron").onclick = function () {
+    "use strict";
     if (player.upQuarkClicks < player.neutron_up_quark_cost) {
         return;
     }
@@ -426,6 +447,7 @@ document.getElementById("neutron").onclick = function () {
     update_total_clicks();
 };
 document.getElementById("atom_creator").onclick = function () {
+    "use strict";
     var eProtons = document.getElementById("protons_in_atom");
     player.temp_protons_in_atom = eProtons.options[eProtons.selectedIndex].text;
     var eNeutrons = document.getElementById("neutrons_in_atom");
@@ -523,6 +545,7 @@ document.getElementById("atom_creator").onclick = function () {
     }
 };
 document.getElementById("atom_recipe_unlock").onclick = function () {
+    "use strict";
     if (player.protonClicks < 15) {
         return;
     }
@@ -599,6 +622,7 @@ document.getElementById("atom_recipe_unlock").onclick = function () {
     atomUnlockText.innerHTML = "There are no more atom recipes to unlock.";
 };
 setInterval(function () {
+    "use strict";
     player.upQuarkClicks += player.auto_up_quark_clicks;
     player.electronClicks += player.auto_electron_clicks;
     player.downQuarkClicks += player.auto_down_quark_clicks;
