@@ -1,4 +1,3 @@
-'use strict';
 var player = {
     upQuarkClicks: 0,
     electronClicks: 0,
@@ -84,12 +83,12 @@ function update_view() {
     if (player.upgrade_down_quark_click_1_bought == "True") {
         eDownQuarkAutoText1.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded.";
     }
-    var eUpQuarkClickText = document.getElementById("buy_up_quark_click")
-    eUpQuarkClickText.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks"
-    var eElectronClickText = document.getElementById("buy_electron_click")
-    eElectronClickText.innerHTML = "Buy an electron synthesiser for " + player.electron_click_cost + " electrons"
-    var eDownQuarkClickText = document.getElementById("buy_down_quark_click")
-    eDownQuarkClickText.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks"
+    var eUpQuarkClickText = document.getElementById("buy_up_quark_click");
+    eUpQuarkClickText.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks";
+    var eElectronClickText = document.getElementById("buy_electron_click");
+    eElectronClickText.innerHTML = "Buy an electron synthesiser for " + player.electron_click_cost + " electrons";
+    var eDownQuarkClickText = document.getElementById("buy_down_quark_click");
+    eDownQuarkClickText.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks";
 }
 
 function update_total_clicks() {
@@ -221,8 +220,8 @@ document.getElementById("upgrade_up_quark_click_1").onclick = function () {
     player.auto_up_quark_clicks_amount = 2;
     player.upgrade_up_quark_click_1_bought = "True";
     player.upQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_up_quark_click_1_text")
-    e.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded."
+    var e = document.getElementById("upgrade_up_quark_click_1_text");
+    e.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded.";
 };
 document.getElementById("upgrade_electron_click_1").onclick = function () {
     if (player.upgrade_electron_click_1_bought == "True") {
@@ -235,8 +234,8 @@ document.getElementById("upgrade_electron_click_1").onclick = function () {
     player.auto_electron_clicks_amount = 2;
     player.upgrade_electron_click_1_bought = "True";
     player.electronClicks -= 50;
-    var e = document.getElementById("upgrade_electron_click_1_text")
-    e.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded."
+    var e = document.getElementById("upgrade_electron_click_1_text");
+    e.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded.";
 };
 document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     if (player.upgrade_down_quark_click_1_bought == "True") {
@@ -249,8 +248,8 @@ document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     player.auto_down_quark_clicks_amount = 2;
     player.upgrade_down_quark_click_1_bought = "True";
     player.downQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_down_quark_click_1_text")
-    e.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded."
+    var e = document.getElementById("upgrade_down_quark_click_1_text");
+    e.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded.";
 };
 
 function save_game() {
@@ -453,7 +452,7 @@ document.getElementById("atom_creator").onclick = function () {
         player.electronClicks -= player.temp_electrons_in_atom;
         player.hydrogen_2_discovered = "true";
     }
-    if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom == 0 && player.temp_electrons_in_atom == 1) {
+    if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom === 0 && player.temp_electrons_in_atom == 1) {
         player.hydrogen1ProtiumClicks++;
         var eHydrogen1ProtiumName = document.getElementById("hydrogen_1_protium_name");
         eHydrogen1ProtiumName.innerHTML = "Hydrogen-1 (Protium) (1 Proton, 1 Electron): ";
@@ -519,7 +518,7 @@ document.getElementById("atom_creator").onclick = function () {
         player.electronClicks -= player.temp_electrons_in_atom;
         hydrogen_3_discovered = "true";
         setTimeout(function () {
-            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!")
+            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!");
         }, 2147483647);
     }
 };
