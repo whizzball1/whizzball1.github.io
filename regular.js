@@ -1,3 +1,4 @@
+'use strict';
 var player = {
     upQuarkClicks: 0,
     electronClicks: 0,
