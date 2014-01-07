@@ -484,68 +484,6 @@ document.getElementById("neutron").onclick = function () {
     player.neutronClicks = player.neutronClicks + 1;
     update_total_clicks();
 };
-
-document.getElementById("sell_up_quark_click").onclick = function () {
-    if (player.auto_up_quark_clicks == 0) {
-        return;
-    }
-    player.auto_up_quark_clicks -= player.auto_up_quark_clicks_amount;
-    player.up_quark_click_cost = player.up_quark_click_cost / 1.25;
-    update_total_clicks();
-};
-document.getElementById("sell_down_quark_click").onclick = function () {
-    if (player.auto_down_quark_clicks == 0) {
-        return;
-    }
-    player.auto_down_quark_clicks -= player.auto_down_quark_clicks_amount;
-    player.down_quark_click_cost = player.down_quark_click_cost / 1.25;
-    update_total_clicks();
-};
-document.getElementById("sell_electron_click").onclick = function () {
-    if (player.auto_electron_clicks == 0) {
-        return;
-    }
-    player.auto_electron_clicks -= player.auto_electron_clicks_amount;
-    player.electron_click_cost = player.electron_click_cost / 1.25;
-    update_total_clicks();
-};
-document.getElementById("sell_proton_click").onclick = function () {
-    if (player.auto_proton_clicks == 0) {
-        return;
-    }
-    player.auto_proton_clicks -= player.auto_proton_clicks_amount;
-    player.proton_click_cost = player.proton_click_cost / 1.25;
-    update_total_clicks();
-};
-document.getElementById("sell_neutron_click").onclick = function () {
-    if (player.auto_neutron_clicks == 0) {
-        return;
-    }
-    player.auto_neutron_clicks -= player.auto_neutron_clicks_amount;
-    player.neutron_click_cost = player.neutron_click_cost / 1.25;
-    update_total_clicks();
-};
-setInterval(function () {
-    player.upQuarkClicks += player.auto_up_quark_clicks;
-    player.electronClicks += player.auto_electron_clicks;
-    player.downQuarkClicks += player.auto_down_quark_clicks;
-    if (player.upQuarkClicks >= player.auto_proton_clicks * 2 && player.downQuarkClicks >= player.auto_proton_clicks) {
-        player.upQuarkClicks -= player.auto_proton_clicks * 2;
-        player.downQuarkClicks -= player.auto_proton_clicks;
-        player.protonClicks += player.auto_proton_clicks;
-    }
-    if (player.downQuarkClicks >= player.auto_neutron_clicks * 2 && player.upQuarkClicks >= player.auto_neutron_clicks) {
-        player.downQuarkClicks -= player.auto_neutron_clicks * 2;
-        player.upQuarkClicks -= player.auto_neutron_clicks;
-        player.neutronClicks += player.auto_neutron_clicks;
-    }
-    update_total_clicks();
-}, 1000);
-});//]]>  
-
-</script>
-<script type='text/javascript'>//<![CDATA[ 
-$(window).load(function(){
 document.getElementById("atom_creator").onclick = function () {
     var eProtons = document.getElementById("protons_in_atom");
     player.temp_protons_in_atom = eProtons.options[eProtons.selectedIndex].text;
@@ -848,6 +786,63 @@ document.getElementById("atom_recipe_unlock").onclick = function () {
     var atomUnlockText = document.getElementById("atom_unlock_text");
     atomUnlockText.innerHTML = "There are no more atom recipes to unlock.";
 };
+document.getElementById("sell_up_quark_click").onclick = function () {
+    if (player.auto_up_quark_clicks == 0) {
+        return;
+    }
+    player.auto_up_quark_clicks -= player.auto_up_quark_clicks_amount;
+    player.up_quark_click_cost = player.up_quark_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_down_quark_click").onclick = function () {
+    if (player.auto_down_quark_clicks == 0) {
+        return;
+    }
+    player.auto_down_quark_clicks -= player.auto_down_quark_clicks_amount;
+    player.down_quark_click_cost = player.down_quark_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_electron_click").onclick = function () {
+    if (player.auto_electron_clicks == 0) {
+        return;
+    }
+    player.auto_electron_clicks -= player.auto_electron_clicks_amount;
+    player.electron_click_cost = player.electron_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_proton_click").onclick = function () {
+    if (player.auto_proton_clicks == 0) {
+        return;
+    }
+    player.auto_proton_clicks -= player.auto_proton_clicks_amount;
+    player.proton_click_cost = player.proton_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_neutron_click").onclick = function () {
+    if (player.auto_neutron_clicks == 0) {
+        return;
+    }
+    player.auto_neutron_clicks -= player.auto_neutron_clicks_amount;
+    player.neutron_click_cost = player.neutron_click_cost / 1.25;
+    update_total_clicks();
+};
+
+setInterval(function () {
+    player.upQuarkClicks += player.auto_up_quark_clicks;
+    player.electronClicks += player.auto_electron_clicks;
+    player.downQuarkClicks += player.auto_down_quark_clicks;
+    if (player.upQuarkClicks >= player.auto_proton_clicks * 2 && player.downQuarkClicks >= player.auto_proton_clicks) {
+        player.upQuarkClicks -= player.auto_proton_clicks * 2;
+        player.downQuarkClicks -= player.auto_proton_clicks;
+        player.protonClicks += player.auto_proton_clicks;
+    }
+    if (player.downQuarkClicks >= player.auto_neutron_clicks * 2 && player.upQuarkClicks >= player.auto_neutron_clicks) {
+        player.downQuarkClicks -= player.auto_neutron_clicks * 2;
+        player.upQuarkClicks -= player.auto_neutron_clicks;
+        player.neutronClicks += player.auto_neutron_clicks;
+    }
+    update_total_clicks();
+}, 1000);
 });//]]>  
 
 </script>
