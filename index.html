@@ -825,6 +825,313 @@ setInterval(function () {
 });//]]>  
 
 </script>
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+document.getElementById("atom_creator").onclick = function () {
+    var eProtons = document.getElementById("protons_in_atom");
+    player.temp_protons_in_atom = eProtons.options[eProtons.selectedIndex].text;
+    var eNeutrons = document.getElementById("neutrons_in_atom");
+    player.temp_neutrons_in_atom = eNeutrons.options[eNeutrons.selectedIndex].text;
+    var eElectrons = document.getElementById("electrons_in_atom");
+    player.temp_electrons_in_atom = eElectrons.options[eElectrons.selectedIndex].text;
+    if (player.temp_protons_in_atom > player.protonClicks) {
+        return;
+    }
+    if (player.temp_neutrons_in_atom > player.neutronClicks) {
+        return;
+    }
+    if (player.temp_electrons_in_atom > player.electronClicks) {
+        return;
+    }
+    if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom == 1 && player.temp_electrons_in_atom == 1) {
+        player.hydrogen2DeuteriumClicks++;
+        var eHydrogen2DeuteriumName = document.getElementById("hydrogen_2_deuterium_name");
+        eHydrogen2DeuteriumName.innerHTML = "Hydrogen-2 (Deuterium) (1 Proton, 1 Neutron, 1 Electron): ";
+        var eHydrogen2DeuteriumCount = document.getElementById("hydrogen_2_deuterium_count");
+        eHydrogen2DeuteriumCount.innerHTML = player.hydrogen2DeuteriumClicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        player.hydrogen_2_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom == 0 && player.temp_electrons_in_atom == 1) {
+        player.hydrogen1ProtiumClicks++;
+        var eHydrogen1ProtiumName = document.getElementById("hydrogen_1_protium_name");
+        eHydrogen1ProtiumName.innerHTML = "Hydrogen-1 (Protium) (1 Proton, 1 Electron): ";
+        var eHydrogen1ProtiumCount = document.getElementById("hydrogen_1_protium_count");
+        eHydrogen1ProtiumCount.innerHTML = player.hydrogen1ProtiumClicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        player.hydrogen_2_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 2 && player.temp_neutrons_in_atom == 1 && player.temp_electrons_in_atom == 2) {
+        player.helium3Clicks++;
+        var eHelium3Name = document.getElementById("helium_3_name");
+        eHelium3Name.innerHTML = "Helium-3 (2 Protons, 1 Neutron, 2 Electrons): ";
+        var eHelium3Count = document.getElementById("helium_3_count");
+        eHelium3Count.innerHTML = player.helium3Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        player.helium_3_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 2 && player.temp_neutrons_in_atom == 2 && player.temp_electrons_in_atom == 2) {
+        player.helium4Clicks++;
+        var eHelium4Name = document.getElementById("helium_4_name");
+        eHelium4Name.innerHTML = "Helium-4 (2 Protons, 2 Neutrons, 2 Electrons): ";
+        var eHelium4Count = document.getElementById("helium_4_count");
+        eHelium4Count.innerHTML = player.helium4Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        helium_4_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 3 && player.temp_neutrons_in_atom == 3 && player.temp_electrons_in_atom == 3) {
+        player.lithium6Clicks++;
+        var eLithium6Name = document.getElementById("lithium_6_name");
+        eLithium6Name.innerHTML = "Lithium-6 (3 Protons, 3 Neutrons, 3 Electrons): ";
+        var eLithium6Count = document.getElementById("lithium_6_count");
+        eLithium6Count.innerHTML = player.lithium6Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        lithium_6_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 3 && player.temp_neutrons_in_atom == 4 && player.temp_electrons_in_atom == 3) {
+        player.lithium7Clicks++;
+        var eLithium7Name = document.getElementById("lithium_7_name");
+        eLithium7Name.innerHTML = "Lithium-7 (3 Protons, 4 Neutrons, 3 Electrons): ";
+        var eLithium7Count = document.getElementById("lithium_7_count");
+        eLithium7Count.innerHTML = player.lithium7Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        lithium_7_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom == 2 && player.temp_electrons_in_atom == 1) {
+        player.hydrogen3TritiumClicks++;
+        var eHydrogen3TritiumName = document.getElementById("hydrogen_3_tritium_name");
+        eHydrogen3TritiumName.innerHTML = "Hydrogen-3 (Tritium) (1 Proton, 2 Neutrons, 1 Electron): ";
+        var eHydrogen3TritiumCount = document.getElementById("hydrogen_3_tritium_count");
+        eHydrogen3TritiumCount.innerHTML = player.hydrogen3TritiumClicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        hydrogen_3_discovered = "true";
+        setTimeout(function () {
+            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!")
+        }, 2147483647);
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 4) {
+        player.beryllium9Clicks++;
+        var eBeryllium9Name = document.getElementById("beryllium_9_name");
+        eBeryllium9Name.innerHTML = "Beryllium-9 (4 Protons, 5 Neutrons, 4 Electrons): ";
+        var eBeryllium9Count = document.getElementById("beryllium_9_count");
+        eBeryllium9Count.innerHTML = player.beryllium9Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_9_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 3 && player.temp_electrons_in_atom == 4) {
+        player.beryllium7Clicks++;
+        var eBeryllium7Name = document.getElementById("beryllium_7_name");
+        eBeryllium7Name.innerHTML = "Beryllium-7 (4 Protons, 3 Neutrons, 4 Electrons): ";
+        var eBeryllium7Count = document.getElementById("beryllium_7_count");
+        eBeryllium7Count.innerHTML = player.beryllium7Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_7_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 4) {
+        player.beryllium10Clicks++;
+        var eBeryllium10Name = document.getElementById("beryllium_10_name");
+        eBeryllium10Name.innerHTML = "Beryllium-10 (4 Protons, 6 Neutrons, 4 Electrons): ";
+        var eBeryllium10Count = document.getElementById("beryllium_10_count");
+        eBeryllium10Count.innerHTML = player.beryllium10Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_10_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 7 && player.temp_electrons_in_atom == 4) {
+        player.beryllium11Clicks++;
+        var eBeryllium11Name = document.getElementById("beryllium_11_name");
+        eBeryllium11Name.innerHTML = "Beryllium-11 (4 Protons, 7 Neutrons, 4 Electrons): ";
+        var eBeryllium11Count = document.getElementById("beryllium_11_count");
+        eBeryllium11Count.innerHTML = player.beryllium11Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_11_discovered = "true";
+        setTimeout(function () {
+            alert("Boron-11, which Beryllium-11 decays into after 13.81 seconds, has not been defined yet, and so this atom will disappear. Thank you for your time.");
+            player.beryllium11Clicks = player.beryllium11Clicks - 1;
+            var eBeryllium11DecayCount = document.getElementById("beryllium_11_count");
+            eBeryllium11DecayCount.innerHTML = player.beryllium11Clicks;
+            player.protonClicks += 4;
+            player.neutronClicks += 7;
+            player.electronClicks += 4;
+        }, 13810);
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 8 && player.temp_electrons_in_atom == 4) {
+        player.beryllium12Clicks++;
+        var eBeryllium12Name = document.getElementById("beryllium_12_name");
+        eBeryllium12Name.innerHTML = "Beryllium-12 (4 Protons, 8 Neutrons, 4 Electrons): ";
+        var eBeryllium12Count = document.getElementById("beryllium_12_count");
+        eBeryllium12Count.innerHTML = player.beryllium12Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_12_discovered = "true";
+        setTimeout(function () {
+            alert("Boron-12, which Beryllium-12 decays into after 21 milliseconds, has not been defined yet, and so this atom will disappear. Thank you for your time.");
+            player.beryllium12Clicks = player.beryllium12Clicks - 1;
+            var eBeryllium12DecayCount = document.getElementById("beryllium_12_count");
+            eBeryllium12DecayCount.innerHTML = player.beryllium12Clicks;
+            player.protonClicks += 4;
+            player.neutronClicks += 8;
+            player.electronClicks += 4;
+        }, 21);
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 4) {
+        player.boron10Clicks++;
+        var eBeryllium10Name = document.getElementById("beryllium_10_name");
+        eBeryllium10Name.innerHTML = "Beryllium-10 (4 Protons, 6 Neutrons, 4 Electrons): ";
+        var eBeryllium10Count = document.getElementById("beryllium_10_count");
+        eBeryllium10Count.innerHTML = player.beryllium10Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_10_discovered = "true";
+    }
+};
+document.getElementById("atom_recipe_unlock").onclick = function () {
+    if (player.protonClicks < 15) {
+        return;
+    }
+    if (player.electronClicks < 15) {
+        return;
+    }
+    if (player.neutronClicks < 15) {
+        return;
+    }
+    if (player.hydrogen_2_discovered == "false") {
+        var eHydrogen2 = document.getElementById("hydrogen_2_deuterium_name");
+        eHydrogen2.innerHTML = "Hydrogen-2 (Deuterium) (1 Proton, 1 Neutron, 1 Electron): ";
+        player.hydrogen_2_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.hydrogen_1_discovered == "false") {
+        var eHydrogen1 = document.getElementById("hydrogen_1_protium_name");
+        eHydrogen1.innerHTML = "Hydrogen-1 (Protium) (1 Proton, 1 Electron): ";
+        player.hydrogen_1_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.hydrogen_3_discovered == "false") {
+        var eHydrogen3 = document.getElementById("hydrogen_3_tritium_name");
+        eHydrogen3.innerHTML = "Hydrogen-3 (Tritium) (1 Proton, 2 Neutrons, 1 Electron): ";
+        player.hydrogen_3_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.helium_3_discovered == "false") {
+        var eHelium3 = document.getElementById("helium_3_name");
+        eHelium3.innerHTML = "Helium-3 (2 Protons, 1 Neutron, 2 Electrons): ";
+        player.helium_3_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.helium_4_discovered == "false") {
+        var eHelium4 = document.getElementById("helium_4_name");
+        eHelium4.innerHTML = "Helium-4 (2 Protons, 2 Neutron, 2 Electrons): ";
+        player.helium_4_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.lithium_6_discovered == "false") {
+        var eLithium6 = document.getElementById("lithium_6_name");
+        eLithium6.innerHTML = "Lithium-6 (3 Protons, 3 Neutrons, 3 Electrons): ";
+        player.lithium_6_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.lithium_7_discovered == "false") {
+        var eLithium7 = document.getElementById("lithium_7_name");
+        eLithium7.innerHTML = "Lithium-7 (3 Protons, 4 Neutrons, 3 Electrons): ";
+        player.lithium_7_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_9_discovered == "false") {
+        var eBeryllium9 = document.getElementById("beryllium_9_name");
+        eBeryllium9.innerHTML = "Beryllium-9 (4 Protons, 5 Neutrons, 4 Electrons): ";
+        player.beryllium_9_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_7_discovered == "false") {
+        var eBeryllium7 = document.getElementById("beryllium_7_name");
+        eBeryllium7.innerHTML = "Beryllium-7 (4 Protons, 3 Neutrons, 4 Electrons): ";
+        player.beryllium_7_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_10_discovered == "false") {
+        var eBeryllium10 = document.getElementById("beryllium_10_name");
+        eBeryllium10.innerHTML = "Beryllium-10 (4 Protons, 6 Neutrons, 4 Electrons): ";
+        player.beryllium_10_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_11_discovered == "false") {
+        var eBeryllium11 = document.getElementById("beryllium_11_name");
+        eBeryllium11.innerHTML = "Beryllium-11 (4 Protons, 7 Neutrons, 4 Electrons): ";
+        player.beryllium_11_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_12_discovered == "false") {
+        var eBeryllium12 = document.getElementById("beryllium_12_name");
+        eBeryllium12.innerHTML = "Beryllium-12 (4 Protons, 8 Neutrons, 4 Electrons): ";
+        player.beryllium_12_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    var atomUnlockText = document.getElementById("atom_unlock_text");
+    atomUnlockText.innerHTML = "There are no more atom recipes to unlock.";
+};
+});//]]>  
+
+</script>
 </head>
 <body>
 <div class="container">
