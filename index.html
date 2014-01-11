@@ -51,6 +51,8 @@ var player = {
     beryllium10Clicks: 0,
     beryllium11Clicks: 0,
     beryllium12Clicks: 0,
+    boron10Clicks: 0,
+    boron11Clicks: 0,
     hydrogen_2_discovered: "false",
     hydrogen_1_discovered: "false",
     hydrogen_3_discovered: "false",
@@ -62,7 +64,9 @@ var player = {
     beryllium_7_discovered: "false",
     beryllium_10_discovered: "false",
     beryllium_11_discovered: "false",
-    beryllium_12_discovered: "false"
+    beryllium_12_discovered: "false",
+    boron_10_discovered: "false",
+    boron_11_discovered: "false"
 };
 
 function set_cookie(cookie_name, value) {
@@ -155,6 +159,11 @@ function update_total_clicks() {
     var eBeryllium11 = document.getElementById("beryllium_11_count");
     eBeryllium11.innerHTML = player.beryllium11Clicks;
     var eBeryllium12 = document.getElementById("beryllium_12_count");
+    eBeryllium12.innerHTML = player.beryllium12Clicks;
+    var eBoron10 = document.getElementById("boron_10_count");
+    eBoron10.innerHTML = player.boron11Clicks;
+    var eBoron11 = document.getElementById("boron_11_count");
+    eBoron11.innerHTML = player.boron11Clicks;
 }
 document.getElementById("up_quark").onclick = function () {
     player.upQuarkClicks++;
@@ -415,6 +424,12 @@ function load_game() {
     if (!("beryllium12Clicks" in player)) {
         player.beryllium12Clicks = 0;
     }
+    if (!("boron10Clicks" in player)) {
+        player.boron10Clicks = 0;
+    }
+    if (!("boron11Clicks" in player)) {
+        player.boron11Clicks = 0;
+    }
     if (!("hydrogen_2_discovered" in player)) {
         player.hydrogen_2_discovered = "false";
     }
@@ -450,6 +465,12 @@ function load_game() {
     }
     if (!("beryllium_12_discovered" in player)) {
         player.beryllium_12_discovered = "false";
+    }
+    if (!("boron_10_discovered" in player)) {
+        player.boron_10_discovered = "false";
+    }
+    if (!("boron_11_discovered" in player)) {
+        player.boron_11_discovered = "false";
     }
     player = save_data;
     update_view();
@@ -653,16 +674,27 @@ document.getElementById("atom_creator").onclick = function () {
             player.electronClicks += 4;
         }, 21);
     }
-    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 4) {
+    if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 5) {
         player.boron10Clicks++;
-        var eBeryllium10Name = document.getElementById("beryllium_10_name");
-        eBeryllium10Name.innerHTML = "Beryllium-10 (4 Protons, 6 Neutrons, 4 Electrons): ";
-        var eBeryllium10Count = document.getElementById("beryllium_10_count");
-        eBeryllium10Count.innerHTML = player.beryllium10Clicks;
+        var eBoron10Name = document.getElementById("boron_10_name");
+        eBoron10Name.innerHTML = "Boron-10 (5 Protons, 5 Neutrons, 5 Electrons): ";
+        var eBoron10Count = document.getElementById("boron_10_count");
+        eBoron10Count.innerHTML = player.boron10Clicks;
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        beryllium_10_discovered = "true";
+        boron_10_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 5) {
+        player.boron11Clicks++;
+        var eBoron11Name = document.getElementById("boron_11_name");
+        eBoron11Name.innerHTML = "Boron-11 (5 Protons, 6 Neutrons, 5 Electrons): ";
+        var eBoron11Count = document.getElementById("boron_11_count");
+        eBoron11Count.innerHTML = player.boron11Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        boron_11_discovered = "true";
     }
 };
 document.getElementById("atom_recipe_unlock").onclick = function () {
@@ -783,6 +815,24 @@ document.getElementById("atom_recipe_unlock").onclick = function () {
         player.neutronClicks -= 15;
         return;
     }
+    if (player.boron_10_discovered == "false") {
+        var eBoron10 = document.getElementById("boron_10_name");
+        eBoron10.innerHTML = "Boron-10 (5 Protons, 5 Neutrons, 5 Electrons): ";
+        player.boron_10_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.boron_11_discovered == "false") {
+        var eBoron11 = document.getElementById("boron_11_name");
+        eBoron11.innerHTML = "Boron-11 (5 Protons, 6 Neutrons, 5 Electrons): ";
+        player.boron_11_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
     var atomUnlockText = document.getElementById("atom_unlock_text");
     atomUnlockText.innerHTML = "There are no more atom recipes to unlock.";
 };
@@ -826,7 +876,6 @@ document.getElementById("sell_neutron_click").onclick = function () {
     player.neutron_click_cost = player.neutron_click_cost / 1.25;
     update_total_clicks();
 };
-
 setInterval(function () {
     player.upQuarkClicks += player.auto_up_quark_clicks;
     player.electronClicks += player.auto_electron_clicks;
