@@ -36,13 +36,29 @@ var player = {
     helium4Clicks: 0,
     lithium6Clicks: 0,
     lithium7Clicks: 0,
+    beryllium9Clicks: 0,
+    beryllium7Clicks: 0,
+    beryllium10Clicks: 0,
+    beryllium11Clicks: 0,
+    beryllium12Clicks: 0,
+    boron10Clicks: 0,
+    boron11Clicks: 0,
+    boron12Clicks: 0,
     hydrogen_2_discovered: "false",
     hydrogen_1_discovered: "false",
     hydrogen_3_discovered: "false",
     helium_3_discovered: "false",
     helium_4_discovered: "false",
     lithium_6_discovered: "false",
-    lithium_7_discovered: "false"
+    lithium_7_discovered: "false",
+    beryllium_9_discovered: "false",
+    beryllium_7_discovered: "false",
+    beryllium_10_discovered: "false",
+    beryllium_11_discovered: "false",
+    beryllium_12_discovered: "false",
+    boron_10_discovered: "false",
+    boron_11_discovered: "false",
+    boron_12_discovered: "false"
 };
 
 function set_cookie(cookie_name, value) {
@@ -83,12 +99,12 @@ function update_view() {
     if (player.upgrade_down_quark_click_1_bought == "True") {
         eDownQuarkAutoText1.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded.";
     }
-    var eUpQuarkClickText = document.getElementById("buy_up_quark_click")
-    eUpQuarkClickText.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks"
-    var eElectronClickText = document.getElementById("buy_electron_click")
-    eElectronClickText.innerHTML = "Buy an electron synthesiser for " + player.electron_click_cost + " electrons"
-    var eDownQuarkClickText = document.getElementById("buy_down_quark_click")
-    eDownQuarkClickText.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks"
+    var eUpQuarkClickText = document.getElementById("buy_up_quark_click");
+    eUpQuarkClickText.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks";
+    var eElectronClickText = document.getElementById("buy_electron_click");
+    eElectronClickText.innerHTML = "Buy an electron synthesiser for " + player.electron_click_cost + " electrons";
+    var eDownQuarkClickText = document.getElementById("buy_down_quark_click");
+    eDownQuarkClickText.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks";
 }
 
 function update_total_clicks() {
@@ -126,6 +142,22 @@ function update_total_clicks() {
     eLithium6.innerHTML = player.lithium6Clicks;
     var eLithium7 = document.getElementById("lithium_7_count");
     eLithium7.innerHTML = player.lithium7Clicks;
+    var eBeryllium9 = document.getElementById("beryllium_9_count");
+    eBeryllium9.innerHTML = player.beryllium9Clicks;
+    var eBeryllium7 = document.getElementById("beryllium_7_count");
+    eBeryllium7.innerHTML = player.beryllium7Clicks;
+    var eBeryllium10 = document.getElementById("beryllium_10_count");
+    eBeryllium10.innerHTML = player.beryllium10Clicks;
+    var eBeryllium11 = document.getElementById("beryllium_11_count");
+    eBeryllium11.innerHTML = player.beryllium11Clicks;
+    var eBeryllium12 = document.getElementById("beryllium_12_count");
+    eBeryllium12.innerHTML = player.beryllium12Clicks;
+    var eBoron10 = document.getElementById("boron_10_count");
+    eBoron10.innerHTML = player.boron10Clicks;
+    var eBoron11 = document.getElementById("boron_11_count");
+    eBoron11.innerHTML = player.boron11Clicks;
+    var eBoron12 = document.getElementById("boron_12_count");
+    eBoron12.innerHTML = player.boron12Clicks;
 }
 document.getElementById("up_quark").onclick = function () {
     player.upQuarkClicks++;
@@ -220,8 +252,8 @@ document.getElementById("upgrade_up_quark_click_1").onclick = function () {
     player.auto_up_quark_clicks_amount = 2;
     player.upgrade_up_quark_click_1_bought = "True";
     player.upQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_up_quark_click_1_text")
-    e.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded."
+    var e = document.getElementById("upgrade_up_quark_click_1_text");
+    e.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded.";
 };
 document.getElementById("upgrade_electron_click_1").onclick = function () {
     if (player.upgrade_electron_click_1_bought == "True") {
@@ -234,8 +266,8 @@ document.getElementById("upgrade_electron_click_1").onclick = function () {
     player.auto_electron_clicks_amount = 2;
     player.upgrade_electron_click_1_bought = "True";
     player.electronClicks -= 50;
-    var e = document.getElementById("upgrade_electron_click_1_text")
-    e.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded."
+    var e = document.getElementById("upgrade_electron_click_1_text");
+    e.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded.";
 };
 document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     if (player.upgrade_down_quark_click_1_bought == "True") {
@@ -248,8 +280,8 @@ document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     player.auto_down_quark_clicks_amount = 2;
     player.upgrade_down_quark_click_1_bought = "True";
     player.downQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_down_quark_click_1_text")
-    e.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded."
+    var e = document.getElementById("upgrade_down_quark_click_1_text");
+    e.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded.";
 };
 
 function save_game() {
@@ -371,6 +403,30 @@ function load_game() {
     if (!("lithium7Clicks" in player)) {
         player.lithium7Clicks = 0;
     }
+    if (!("beryllium9Clicks" in player)) {
+        player.beryllium9Clicks = 0;
+    }
+    if (!("beryllium7Clicks" in player)) {
+        player.beryllium7Clicks = 0;
+    }
+    if (!("beryllium10Clicks" in player)) {
+        player.beryllium10Clicks = 0;
+    }
+    if (!("beryllium11Clicks" in player)) {
+        player.beryllium11Clicks = 0;
+    }
+    if (!("beryllium12Clicks" in player)) {
+        player.beryllium12Clicks = 0;
+    }
+    if (!("boron10Clicks" in player)) {
+        player.boron10Clicks = 0;
+    }
+    if (!("boron11Clicks" in player)) {
+        player.boron11Clicks = 0;
+    }
+    if (!("boron12Clicks" in player)) {
+        player.boron12Clicks = 0;
+    }
     if (!("hydrogen_2_discovered" in player)) {
         player.hydrogen_2_discovered = "false";
     }
@@ -391,6 +447,30 @@ function load_game() {
     }
     if (!("lithium_7_discovered" in player)) {
         player.lithium_7_discovered = "false";
+    }
+    if (!("beryllium_9_discovered" in player)) {
+        player.beryllium_9_discovered = "false";
+    }
+    if (!("beryllium_7_discovered" in player)) {
+        player.beryllium_7_discovered = "false";
+    }
+    if (!("beryllium_10_discovered" in player)) {
+        player.beryllium_10_discovered = "false";
+    }
+    if (!("beryllium_11_discovered" in player)) {
+        player.beryllium_11_discovered = "false";
+    }
+    if (!("beryllium_12_discovered" in player)) {
+        player.beryllium_12_discovered = "false";
+    }
+    if (!("boron_10_discovered" in player)) {
+        player.boron_10_discovered = "false";
+    }
+    if (!("boron_11_discovered" in player)) {
+        player.boron_11_discovered = "false";
+    }
+    if (!("boron_12_discovered" in player)) {
+        player.boron_12_discovered = "false";
     }
     player = save_data;
     update_view();
@@ -518,10 +598,122 @@ document.getElementById("atom_creator").onclick = function () {
         player.electronClicks -= player.temp_electrons_in_atom;
         hydrogen_3_discovered = "true";
         setTimeout(function () {
-            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!")
+            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!");
         }, 2147483647);
     }
-};
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 4) {
+        player.beryllium9Clicks++;
+        var eBeryllium9Name = document.getElementById("beryllium_9_name");
+        eBeryllium9Name.innerHTML = "Beryllium-9 (4 Protons, 5 Neutrons, 4 Electrons): ";
+        var eBeryllium9Count = document.getElementById("beryllium_9_count");
+        eBeryllium9Count.innerHTML = player.beryllium9Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_9_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 3 && player.temp_electrons_in_atom == 4) {
+        player.beryllium7Clicks++;
+        var eBeryllium7Name = document.getElementById("beryllium_7_name");
+        eBeryllium7Name.innerHTML = "Beryllium-7 (4 Protons, 3 Neutrons, 4 Electrons): ";
+        var eBeryllium7Count = document.getElementById("beryllium_7_count");
+        eBeryllium7Count.innerHTML = player.beryllium7Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_7_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 4) {
+        player.beryllium10Clicks++;
+        var eBeryllium10Name = document.getElementById("beryllium_10_name");
+        eBeryllium10Name.innerHTML = "Beryllium-10 (4 Protons, 6 Neutrons, 4 Electrons): ";
+        var eBeryllium10Count = document.getElementById("beryllium_10_count");
+        eBeryllium10Count.innerHTML = player.beryllium10Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_10_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 7 && player.temp_electrons_in_atom == 4) {
+        player.beryllium11Clicks++;
+        var eBeryllium11Name = document.getElementById("beryllium_11_name");
+        eBeryllium11Name.innerHTML = "Beryllium-11 (4 Protons, 7 Neutrons, 4 Electrons): ";
+        var eBeryllium11Count = document.getElementById("beryllium_11_count");
+        eBeryllium11Count.innerHTML = player.beryllium11Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_11_discovered = "true";
+        setTimeout(function () {
+            player.beryllium11Clicks = player.beryllium11Clicks - 1;
+            var eBeryllium11DecayCount = document.getElementById("beryllium_11_count");
+            eBeryllium11DecayCount.innerHTML = player.beryllium11Clicks;
+            player.boron11Clicks++;
+            var eBoron12DecayBerylliumName = document.getElementById("boron_11_name");
+            eBoron12DecayBerylliumName.innerHTML = "Boron-12 (5 Protons, 7 Neutrons, 5 Electrons): ";
+        }, 13810);
+    }
+    if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 8 && player.temp_electrons_in_atom == 4) {
+        player.beryllium12Clicks++;
+        var eBeryllium12Name = document.getElementById("beryllium_12_name");
+        eBeryllium12Name.innerHTML = "Beryllium-12 (4 Protons, 8 Neutrons, 4 Electrons): ";
+        var eBeryllium12Count = document.getElementById("beryllium_12_count");
+        eBeryllium12Count.innerHTML = player.beryllium12Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        beryllium_12_discovered = "true";
+        setTimeout(function () {
+            player.beryllium12Clicks = player.beryllium12Clicks - 1;
+            var eBeryllium12DecayCount = document.getElementById("beryllium_12_count");
+            eBeryllium12DecayCount.innerHTML = player.beryllium12Clicks;
+            player.boron12Clicks++;
+            var eBoron12DecayBerylliumName = document.getElementById("boron_12_name");
+        }, 21);
+    }
+    if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 5) {
+        player.boron10Clicks++;
+        var eBoron10Name = document.getElementById("boron_10_name");
+        eBoron10Name.innerHTML = "Boron-10 (5 Protons, 5 Neutrons, 5 Electrons): ";
+        var eBoron10Count = document.getElementById("boron_10_count");
+        eBoron10Count.innerHTML = player.boron10Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        boron_10_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 5) {
+        player.boron11Clicks++;
+        var eBoron11Name = document.getElementById("boron_11_name");
+        eBoron11Name.innerHTML = "Boron-11 (5 Protons, 6 Neutrons, 5 Electrons): ";
+        var eBoron11Count = document.getElementById("boron_11_count");
+        eBoron11Count.innerHTML = player.boron11Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        boron_11_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 7 && player.temp_electrons_in_atom == 5) {
+        player.boron12Clicks++;
+        var eBoron12Name = document.getElementById("boron_12_name");
+        eBoron12Name.innerHTML = "Boron-12 (5 Protons, 7 Neutrons, 5 Electrons): ";
+        var eBoron12Count = document.getElementById("boron_12_count");
+        eBoron12Count.innerHTML = player.boron12Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        boron_12_discovered = "true";
+        setTimeout(function () {
+            alert("Carbon-12, which Boron-12 decays into with a 98.4% chance after 20 milliseconds, has not been defined, and therefore, this atom will disappear, returning your particles. Goodbye.");
+            player.boron12Clicks = player.boron12Clicks - 1;
+            var eBoron12DecayCount = document.getElementById("boron_12_count");
+            eBoron12DecayCount.innerHTML = player.boron12Clicks;
+            player.protonClicks += 5;
+            player.neutronClicks += 7;
+            player.electronClicks += 5;
+        }, 20);
+    }
+}
 document.getElementById("atom_recipe_unlock").onclick = function () {
     if (player.protonClicks < 15) {
         return;
@@ -595,8 +787,111 @@ document.getElementById("atom_recipe_unlock").onclick = function () {
         player.neutronClicks -= 15;
         return;
     }
+    if (player.beryllium_9_discovered == "false") {
+        var eBeryllium9 = document.getElementById("beryllium_9_name");
+        eBeryllium9.innerHTML = "Beryllium-9 (4 Protons, 5 Neutrons, 4 Electrons): ";
+        player.beryllium_9_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_7_discovered == "false") {
+        var eBeryllium7 = document.getElementById("beryllium_7_name");
+        eBeryllium7.innerHTML = "Beryllium-7 (4 Protons, 3 Neutrons, 4 Electrons): ";
+        player.beryllium_7_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_10_discovered == "false") {
+        var eBeryllium10 = document.getElementById("beryllium_10_name");
+        eBeryllium10.innerHTML = "Beryllium-10 (4 Protons, 6 Neutrons, 4 Electrons): ";
+        player.beryllium_10_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_11_discovered == "false") {
+        var eBeryllium11 = document.getElementById("beryllium_11_name");
+        eBeryllium11.innerHTML = "Beryllium-11 (4 Protons, 7 Neutrons, 4 Electrons): ";
+        player.beryllium_11_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.beryllium_12_discovered == "false") {
+        var eBeryllium12 = document.getElementById("beryllium_12_name");
+        eBeryllium12.innerHTML = "Beryllium-12 (4 Protons, 8 Neutrons, 4 Electrons): ";
+        player.beryllium_12_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.boron_10_discovered == "false") {
+        var eBoron10 = document.getElementById("boron_10_name");
+        eBoron10.innerHTML = "Boron-10 (5 Protons, 5 Neutrons, 5 Electrons): ";
+        player.boron_10_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.boron_11_discovered == "false") {
+        var eBoron11 = document.getElementById("boron_11_name");
+        eBoron11.innerHTML = "Boron-11 (5 Protons, 6 Neutrons, 5 Electrons): ";
+        player.boron_11_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
     var atomUnlockText = document.getElementById("atom_unlock_text");
     atomUnlockText.innerHTML = "There are no more atom recipes to unlock.";
+};
+document.getElementById("sell_up_quark_click").onclick = function () {
+    if (player.auto_up_quark_clicks == 0) {
+        return;
+    }
+    player.auto_up_quark_clicks -= player.auto_up_quark_clicks_amount;
+    player.up_quark_click_cost = player.up_quark_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_down_quark_click").onclick = function () {
+    if (player.auto_down_quark_clicks == 0) {
+        return;
+    }
+    player.auto_down_quark_clicks -= player.auto_down_quark_clicks_amount;
+    player.down_quark_click_cost = player.down_quark_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_electron_click").onclick = function () {
+    if (player.auto_electron_clicks == 0) {
+        return;
+    }
+    player.auto_electron_clicks -= player.auto_electron_clicks_amount;
+    player.electron_click_cost = player.electron_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_proton_click").onclick = function () {
+    if (player.auto_proton_clicks == 0) {
+        return;
+    }
+    player.auto_proton_clicks -= player.auto_proton_clicks_amount;
+    player.proton_click_cost = player.proton_click_cost / 1.25;
+    update_total_clicks();
+};
+document.getElementById("sell_neutron_click").onclick = function () {
+    if (player.auto_neutron_clicks == 0) {
+        return;
+    }
+    player.auto_neutron_clicks -= player.auto_neutron_clicks_amount;
+    player.neutron_click_cost = player.neutron_click_cost / 1.25;
+    update_total_clicks();
 };
 setInterval(function () {
     player.upQuarkClicks += player.auto_up_quark_clicks;
