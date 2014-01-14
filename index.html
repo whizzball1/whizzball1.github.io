@@ -6,6 +6,7 @@
 <script type='text/javascript' src='http://code.jquery.com/jquery-git2.js'></script>
 <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 <script type='text/javascript' src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="local-style.css">
 <script type='text/javascript'>//<![CDATA[ 
 $(window).load(function(){
 var player = {
@@ -97,22 +98,22 @@ function update_view() {
     update_total_clicks();
     var eUpQuarkAutoText1 = document.getElementById("upgrade_up_quark_click_1_text");
     if (player.upgrade_up_quark_click_1_bought == "True") {
-        eUpQuarkAutoText1.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded.";
+        eUpQuarkAutoText1.innerHTML = "(Already upgraded)";
     }
     var eElectronAutoText1 = document.getElementById("upgrade_electron_click_1_text");
     if (player.upgrade_electron_click_1_bought == "True") {
-        eElectronAutoText1.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded.";
+        eElectronAutoText1.innerHTML = "(Already upgraded)";
     }
     var eDownQuarkAutoText1 = document.getElementById("upgrade_down_quark_click_1_text");
     if (player.upgrade_down_quark_click_1_bought == "True") {
-        eDownQuarkAutoText1.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded.";
+        eDownQuarkAutoText1.innerHTML = "(Already upgraded)";
     }
     var eUpQuarkClickText = document.getElementById("buy_up_quark_click")
-    eUpQuarkClickText.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks"
+    eUpQuarkClickText.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)"
     var eElectronClickText = document.getElementById("buy_electron_click")
-    eElectronClickText.innerHTML = "Buy an electron synthesiser for " + player.electron_click_cost + " electrons"
+    eElectronClickText.innerHTML = "Electron Synthesiser (" + player.electron_click_cost + " electrons)"
     var eDownQuarkClickText = document.getElementById("buy_down_quark_click")
-    eDownQuarkClickText.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks"
+    eDownQuarkClickText.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)"
 }
 
 function update_total_clicks() {
@@ -188,7 +189,7 @@ document.getElementById("buy_up_quark_click").onclick = function () {
     var e = document.getElementById("up_quarks_per_second");
     e.innerHTML = player.auto_up_quark_clicks;
     var eTwo = document.getElementById("buy_up_quark_click");
-    eTwo.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks";
+    eTwo.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)";
     update_total_clicks();
 };
 document.getElementById("buy_electron_click").onclick = function () {
@@ -216,7 +217,7 @@ document.getElementById("buy_down_quark_click").onclick = function () {
     var e = document.getElementById("down_quarks_per_second");
     e.innerHTML = player.auto_down_quark_clicks;
     var eTwo = document.getElementById("buy_down_quark_click");
-    eTwo.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks";
+    eTwo.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)";
     update_total_clicks();
 };
 document.getElementById("buy_proton_click").onclick = function () {
@@ -230,7 +231,7 @@ document.getElementById("buy_proton_click").onclick = function () {
     var e = document.getElementById("protons_per_second");
     e.innerHTML = player.auto_proton_clicks;
     var eTwo = document.getElementById("buy_proton_click");
-    eTwo.innerHTML = "Buy a proton synthesiser for " + player.proton_click_cost + " protons";
+    eTwo.innerHTML = "Proton Synthesiser (" + player.proton_click_cost + " protons)";
     update_total_clicks();
 };
 document.getElementById("buy_neutron_click").onclick = function () {
@@ -244,7 +245,7 @@ document.getElementById("buy_neutron_click").onclick = function () {
     var e = document.getElementById("neutrons_per_second");
     e.innerHTML = player.auto_neutron_clicks;
     var eTwo = document.getElementById("buy_neutron_click");
-    eTwo.innerHTML = "Buy a neutron synthesiser for " + player.neutron_click_cost + " neutrons";
+    eTwo.innerHTML = "Neutron Synthesiser (" + player.neutron_click_cost + " neutrons)";
     update_total_clicks();
 };
 document.getElementById("upgrade_up_quark_click_1").onclick = function () {
@@ -259,7 +260,7 @@ document.getElementById("upgrade_up_quark_click_1").onclick = function () {
     player.upgrade_up_quark_click_1_bought = "True";
     player.upQuarkClicks -= 50;
     var e = document.getElementById("upgrade_up_quark_click_1_text")
-    e.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded."
+    e.innerHTML = "(Already upgraded)"
 };
 document.getElementById("upgrade_electron_click_1").onclick = function () {
     if (player.upgrade_electron_click_1_bought == "True") {
@@ -273,7 +274,7 @@ document.getElementById("upgrade_electron_click_1").onclick = function () {
     player.upgrade_electron_click_1_bought = "True";
     player.electronClicks -= 50;
     var e = document.getElementById("upgrade_electron_click_1_text")
-    e.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded."
+    e.innerHTML = "(Already upgraded)"
 };
 document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     if (player.upgrade_down_quark_click_1_bought == "True") {
@@ -287,7 +288,7 @@ document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     player.upgrade_down_quark_click_1_bought = "True";
     player.downQuarkClicks -= 50;
     var e = document.getElementById("upgrade_down_quark_click_1_text")
-    e.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded."
+    e.innerHTML = "(Already upgraded)"
 };
 
 function save_game() {
@@ -900,9 +901,10 @@ setInterval(function () {
 <div class="container">
      <h1>Periodic Alchemy <small>An Incremental</small></h1>
 
-    <button id="save" type="button" class="btn btn-primary">Save your game.</button>
-    <button id="load" type="button" class="btn btn-primary">Load your game.</button>
-    <hr />
+    <div id="saveload">
+      <button id="save" type="button" class="btn btn-primary">Save</button>
+      <button id="load" type="button" class="btn btn-primary">Load</button>
+    </div>
     <ul class="nav nav-tabs" id="myTab">
         <li><a href="#home" data-toggle="tab">Home</a>
 
@@ -916,127 +918,148 @@ setInterval(function () {
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade in active" id="home">
-            <hr></hr>
-            <button id="up_quark" type="button" class="btn btn-primary">Click me to create an up quark.</button>
-            <hr></hr>
-            <button id="electron" type="button" class="btn btn-primary">Click me to create an electron.</button>
-            <hr></hr>
-            <button id="down_quark" type="button" class="btn btn-primary">Click me to create a down quark.</button>
-            <hr></hr>
-            <button id="proton" type="button" class="btn btn-primary">Create a proton for 2 up quarks and one down quark.</button>
-            <hr></hr>
-            <button id="neutron" type="button" class="btn btn-primary">Create a neutron for 2 down quarks and one up quark.</button>
-            <hr></hr>
-            <p>Up Quarks: <span id="total_up_quark_clicks">0</span>
-
-                <br />Electrons: <span id="total_electron_clicks">0</span>
-
-                <br />Down Quarks: <span id="total_down_quark_clicks">0</span>
-
-                <br />Up Quarks per <small id="time_period">1.00</small> second: <span id="up_quarks_per_second">0</span>
-Electrons per <small id="time_period">1.00</small> second: <span id="electrons_per_second">0</span>
-Down Quarks per <small id="time_period">1.00</small> second: <span id="down_quarks_per_second">0</span>
-
-                <br />Protons: <span id="total_protons">0</span> 
-                <br />Neutrons: <span id="total_neutrons">0</span>
-
-                <br />Protons per <small id="time_period">1.00</small> second: <span id="protons_per_second">0</span>
-
-                <br />Neutrons per <small id="time_period">1.00</small> second: <span id="neutrons_per_second">0</span>
-
-            </p>
-             <h3>Buy</h3>
-
-            <table class="table">
-                <tr>
-                    <td>
-                        <button id="buy_up_quark_click" type="button" class="btn btn-primary">Buy an up quark synthesiser for 15 up quarks</button>
-                        <button id="buy_electron_click" type="button" class="btn btn-primary">Buy an electron synthesiser for 15 electrons</button>
-                        <button id="buy_down_quark_click" type="button" class="btn btn-primary">Buy a down quark synthesiser for 15 down quarks</button>
-                        <button id="buy_proton_click" type="button" class="btn btn-primary">Buy a proton synthesiser for 15 protons</button>
-                        <button id="buy_neutron_click" type="button" class="btn btn-primary">Buy a neutron synthesiser for 15 neutrons</button>
-                        <button id="atom_recipe_unlock" type="button" class="btn btn-primary"><span id="atom_unlock_text">Unlock one atom recipe for 15 protons, 15 electrons, and 15 neutrons</span>
-
-                        </button>
-                    </td>
-                </tr>
-            </table>
-             <h3>Upgrade</h3>
-
-            <table class="table">
-                <tr>
-                    <td>
-                        <button id="upgrade_up_quark_click_1" type="button" class="btn btn-primary"> <span id="upgrade_up_quark_click_1_text">Double Up: US's make 2 up quarks per second for 50 up quarks.</span>
-
-                        </button>
-                        <button id="upgrade_electron_click_1" type="button" class="btn btn-primary"> <span id="upgrade_electron_click_1_text">Can You Believe It's Fundamental?: ES's make 2 electrons per second for 50 electrons.</span>
-
-                        </button>
-                        <button id="upgrade_down_quark_click_1" type="button" class="btn btn-primary"> <span id="upgrade_down_quark_click_1_text">Down and Out and In Again: DS's make 2 down quarks per second for 50 down quarks.</span>
-
-                        </button>
-                    </td>
-                </tr>
-            </table>
-             <h3>Sell</h3>
-
-            <table class="table">
-                <tr>
-                    <td>
-                        <button id="sell_up_quark_click" type="button" class="btn btn-primary">Sell an Up Quark Synthesiser, but don't get any up quarks back</button>
-                        <button id="sell_electron_click" type="button" class="btn btn-primary">Sell an Electron Synthesiser, but don't get any electrons back</button>
-                        <button id="sell_down_quark_click" type="button" class="btn btn-primary">Sell a Down Quark Synthesiser, but don't get any down quarks back</button>
-                        <button id="sell_proton_click" type="button" class="btn btn-primary">Sell a Proton Synthesiser, but don't get any protons back</button>
-                        <button id="sell_neutron_click" type="button" class="btn btn-primary">Sell a Neutron Synthesiser, but don't get any neutrons back</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="tab-pane fade" id="atoms">
-            <form class="form-horizontal" role="form">
-                <div class="form-group"> <span>Protons:</span>
-
-                    <br></br>
-                    <select class="form-control" id="protons_in_atom">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-                <div class="form-group"> <span>Neutrons:</span>
-
-                    <br></br>
-                    <select class="form-control" id="neutrons_in_atom">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                    </select>
-                </div>
-                <div class="form-group"> <span>Electrons:</span>
-
-                    <br></br>
-                    <select class="form-control" id="electrons_in_atom">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-            </form>
-            <button id="atom_creator" type="submit" class="btn btn-primary">Create your atom!</button>
+            <h3>Click</h3>
+            <button id="up_quark" type="button" class="btn btn-primary">Up Quark</button>
+            <button id="electron" type="button" class="btn btn-primary">Electron</button>
+            <button id="down_quark" type="button" class="btn btn-primary">Down Quark</button>
             <br></br>
-            <p><span id="hydrogen_2_deuterium_name">Not Discovered:</span>  <span id="hydrogen_2_deuterium_count">0</span>
+            <button id="proton" type="button" class="btn btn-primary">Proton (2 up quarks, 1 down quark)</button>
+            <button id="neutron" type="button" class="btn btn-primary">Neutron (2 down quarks, 1 up quark)</button>
+            <br></br>
+            <table>
+              <tr>
+                <td>Up Quarks:</td>
+                <td id="total_up_quark_clicks">0</td>
+                <td>+</td>
+                <td id="up_quarks_per_second">0</td>
+                <td>per</td>
+                <td id="time_period">1.00</td>
+                <td>second</td>
+              </tr>
+              <tr>
+                <td>Electrons:</td>
+                <td id="total_electron_clicks">0</td>
+                <td>+</td>
+                <td id="electrons_per_second">0</td>
+                <td>per</td>
+                <td id="time_period">1.00</td>
+                <td>second</td>
+              </tr>
+              <tr>
+                <td>Down Quarks:</td>
+                <td id="total_down_quark_clicks">0</td>
+                <td>+</td>
+                <td id="down_quarks_per_second">0</td>
+                <td>per</td>
+                <td id="time_period">1.00</td>
+                <td>second</td>
+              </tr>
+              <tr>
+                <td>Protons:</td>
+                <td id="total_protons">0</td>
+                <td>+</td>
+                <td id="protons_per_second">0</td>
+                <td>per</td>
+                <td id="time_period">1.00</td>
+                <td>second</td>
+              </tr>
+              <tr>
+                <td>Neutrons:</td>
+                <td id="total_neutrons">0</td>
+                <td>+</td>
+                <td id="neutrons_per_second">0</td>
+                <td>per</td>
+                <td id="time_period">1.00</td>
+                <td>second</td>
+              </tr>
+            </table>
+            
+            <h3>Buy</h3>
+            <button id="buy_up_quark_click" type="button" class="btn btn-primary">Up Quark Synthesiser (15 up quarks)</button>
+            <button id="buy_electron_click" type="button" class="btn btn-primary">Electron Synthesiser (15 electrons)</button>
+            <button id="buy_down_quark_click" type="button" class="btn btn-primary">Down Quark Synthesiser (15 down quarks)</button>
+            <br></br>
+            <button id="buy_proton_click" type="button" class="btn btn-primary">Proton Synthesiser (15 protons)</button>
+            <button id="buy_neutron_click" type="button" class="btn btn-primary">Neutron Synthesiser (15 neutrons)</button>
+            <br></br>
+            <button id="atom_recipe_unlock" type="button" class="btn btn-primary"><span id="atom_unlock_text">Unlock one atom recipe (15 protons, 15 electrons, 15 neutrons)</span></button>
 
-                <br /> <span id="hydrogen_1_protium_name">Not Discovered:</span>  <span id="hydrogen_1_protium_count">0</span>
+            <h3>Upgrade</h3>
+            
+            <button id="upgrade_up_quark_click_1" type="button" class="btn btn-primary">
+              Double Up
+            </button>
+            Up quark synthesisers are twice as efficient.
+            <span id="upgrade_up_quark_click_1_text">(50 up quarks)</span>
+            <br></br>
+            
+            <button id="upgrade_electron_click_1" type="button" class="btn btn-primary">
+              Can You Believe It's Fundamental?
+            </button>
+            Electron synthesisers are twice as efficient.
+            <span id="upgrade_electron_click_1_text">(50 electrons)</span>
+            <br></br>
+            
+            <button id="upgrade_down_quark_click_1" type="button" class="btn btn-primary">
+              Down and Out and In Again
+            </button>
+            Down quark synthesisers are twice as efficient.
+            <span id="upgrade_down_quark_click_1_text">(50 down quarks)</span>
+            <br></br>
+            
+            <h3>Discard <small>(no refunds)</small></h3>
+            <button id="sell_up_quark_click" type="button" class="btn btn-primary discard">Up Quark Synthesiser</button>
+            <button id="sell_electron_click" type="button" class="btn btn-primary discard">Electron Synthesiser</button>
+            <button id="sell_down_quark_click" type="button" class="btn btn-primary discard">Down Quark Synthesiser</button>
+            <button id="sell_proton_click" type="button" class="btn btn-primary discard">Proton Synthesiser</button>
+            <button id="sell_neutron_click" type="button" class="btn btn-primary discard">Neutron Synthesiser</button>
+        </div>
+        
+        <div class="tab-pane fade" id="atoms">
+            <br></br>
+            <table><tr><td>
+                  <form class="form-horizontal" role="form">
+                    <table>
+                      <tr class="form-group"> <td>Protons:</td>
+                        <td><select class="form-control" id="protons_in_atom">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select></td>
+                      </tr>
+                      <tr class="form-group"> <td>Neutrons:</td>
+                        <td><select class="form-control" id="neutrons_in_atom">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                        </select></td>
+                      </tr>
+                      <tr class="form-group"> <td>Electrons:</td>
+                        <td><select class="form-control" id="electrons_in_atom">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select></td>
+                      </tr>
+                    </table>
+                  </form>
+                </td><td>
+                  <button id="atom_creator" type="submit" class="btn btn-primary">Create your atom!</button>
+            </td></tr></table>
+            <br></br>
+            <p><span id="hydrogen_1_protium_name">Not Discovered:</span>  <span id="hydrogen_1_protium_count">0</span>
+
+                <br /> <span id="hydrogen_2_deuterium_name">Not Discovered:</span>  <span id="hydrogen_2_deuterium_count">0</span>
 
                 <br /> <span id="hydrogen_3_tritium_name">Not Discovered:</span>  <span id="hydrogen_3_tritium_count">0</span>
 
@@ -1063,7 +1086,11 @@ Down Quarks per <small id="time_period">1.00</small> second: <span id="down_quar
                 <br /> <span id="boron_11_name">Not Discovered:</span>  <span id="boron_11_count">0</span>
             </p>
         </div>
+        
         <div class="tab-pane fade" id="changelog">
+             <h1>Revision 28</h1>
+            
+            <p>+ Revised Layout</p>
              <h1>Revision 27</h1>
             
             <p>+ 6 New Atoms</p>
