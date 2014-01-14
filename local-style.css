@@ -1,0 +1,38 @@
+.tab-pane {
+    margin-bottom: 2em;
+}
+
+h3 {
+    border-bottom: 1px solid lightgray;
+}
+
+.btn-primary {
+    margin-right: 0.5em;
+}
+
+td {
+    padding-right: 0.5em;
+}
+
+#saveload {
+    float: right;
+}
+
+.discard {
+    background-color: #c00000;
+    border-color: #c80000;
+}
+.discard:hover {
+    background-color: #b00000;
+    border-color: #b80000;
+}
+
+#protons_in_atom, #neutrons_in_atom, #electrons_in_atom {
+    width: auto;
+    display: inline;
+    margin-left: 1em;
+}
+
+#atom_creator {
+    margin-left: 2em;
+}
