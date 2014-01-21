@@ -89,22 +89,22 @@ function update_view() {
     update_total_clicks();
     var eUpQuarkAutoText1 = document.getElementById("upgrade_up_quark_click_1_text");
     if (player.upgrade_up_quark_click_1_bought == "True") {
-        eUpQuarkAutoText1.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded.";
+        eUpQuarkAutoText1.innerHTML = "(Already upgraded)";
     }
     var eElectronAutoText1 = document.getElementById("upgrade_electron_click_1_text");
     if (player.upgrade_electron_click_1_bought == "True") {
-        eElectronAutoText1.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded.";
+        eElectronAutoText1.innerHTML = "(Already upgraded)";
     }
     var eDownQuarkAutoText1 = document.getElementById("upgrade_down_quark_click_1_text");
     if (player.upgrade_down_quark_click_1_bought == "True") {
-        eDownQuarkAutoText1.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded.";
+        eDownQuarkAutoText1.innerHTML = "(Already upgraded)";
     }
-    var eUpQuarkClickText = document.getElementById("buy_up_quark_click");
-    eUpQuarkClickText.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks";
-    var eElectronClickText = document.getElementById("buy_electron_click");
-    eElectronClickText.innerHTML = "Buy an electron synthesiser for " + player.electron_click_cost + " electrons";
-    var eDownQuarkClickText = document.getElementById("buy_down_quark_click");
-    eDownQuarkClickText.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks";
+    var eUpQuarkClickText = document.getElementById("buy_up_quark_click")
+    eUpQuarkClickText.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)"
+    var eElectronClickText = document.getElementById("buy_electron_click")
+    eElectronClickText.innerHTML = "Electron Synthesiser (" + player.electron_click_cost + " electrons)"
+    var eDownQuarkClickText = document.getElementById("buy_down_quark_click")
+    eDownQuarkClickText.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)"
 }
 
 function update_total_clicks() {
@@ -182,7 +182,7 @@ document.getElementById("buy_up_quark_click").onclick = function () {
     var e = document.getElementById("up_quarks_per_second");
     e.innerHTML = player.auto_up_quark_clicks;
     var eTwo = document.getElementById("buy_up_quark_click");
-    eTwo.innerHTML = "Buy an up quark synthesiser for " + player.up_quark_click_cost + " up quarks";
+    eTwo.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)";
     update_total_clicks();
 };
 document.getElementById("buy_electron_click").onclick = function () {
@@ -210,7 +210,7 @@ document.getElementById("buy_down_quark_click").onclick = function () {
     var e = document.getElementById("down_quarks_per_second");
     e.innerHTML = player.auto_down_quark_clicks;
     var eTwo = document.getElementById("buy_down_quark_click");
-    eTwo.innerHTML = "Buy a down quark synthesiser for " + player.down_quark_click_cost + " down quarks";
+    eTwo.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)";
     update_total_clicks();
 };
 document.getElementById("buy_proton_click").onclick = function () {
@@ -224,7 +224,7 @@ document.getElementById("buy_proton_click").onclick = function () {
     var e = document.getElementById("protons_per_second");
     e.innerHTML = player.auto_proton_clicks;
     var eTwo = document.getElementById("buy_proton_click");
-    eTwo.innerHTML = "Buy a proton synthesiser for " + player.proton_click_cost + " protons";
+    eTwo.innerHTML = "Proton Synthesiser (" + player.proton_click_cost + " protons)";
     update_total_clicks();
 };
 document.getElementById("buy_neutron_click").onclick = function () {
@@ -238,7 +238,7 @@ document.getElementById("buy_neutron_click").onclick = function () {
     var e = document.getElementById("neutrons_per_second");
     e.innerHTML = player.auto_neutron_clicks;
     var eTwo = document.getElementById("buy_neutron_click");
-    eTwo.innerHTML = "Buy a neutron synthesiser for " + player.neutron_click_cost + " neutrons";
+    eTwo.innerHTML = "Neutron Synthesiser (" + player.neutron_click_cost + " neutrons)";
     update_total_clicks();
 };
 document.getElementById("upgrade_up_quark_click_1").onclick = function () {
@@ -252,8 +252,8 @@ document.getElementById("upgrade_up_quark_click_1").onclick = function () {
     player.auto_up_quark_clicks_amount = 2;
     player.upgrade_up_quark_click_1_bought = "True";
     player.upQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_up_quark_click_1_text");
-    e.innerHTML = "Double Up: US's make 2 up quarks per second. Already upgraded.";
+    var e = document.getElementById("upgrade_up_quark_click_1_text")
+    e.innerHTML = "(Already upgraded)"
 };
 document.getElementById("upgrade_electron_click_1").onclick = function () {
     if (player.upgrade_electron_click_1_bought == "True") {
@@ -266,8 +266,8 @@ document.getElementById("upgrade_electron_click_1").onclick = function () {
     player.auto_electron_clicks_amount = 2;
     player.upgrade_electron_click_1_bought = "True";
     player.electronClicks -= 50;
-    var e = document.getElementById("upgrade_electron_click_1_text");
-    e.innerHTML = "Can You Believe It's Fundamental?: ES's make 2 protons per second. Already upgraded.";
+    var e = document.getElementById("upgrade_electron_click_1_text")
+    e.innerHTML = "(Already upgraded)"
 };
 document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     if (player.upgrade_down_quark_click_1_bought == "True") {
@@ -280,8 +280,8 @@ document.getElementById("upgrade_down_quark_click_1").onclick = function () {
     player.auto_down_quark_clicks_amount = 2;
     player.upgrade_down_quark_click_1_bought = "True";
     player.downQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_down_quark_click_1_text");
-    e.innerHTML = "Down and Out and In Again: DS's make 2 down quarks per second. Already upgraded.";
+    var e = document.getElementById("upgrade_down_quark_click_1_text")
+    e.innerHTML = "(Already upgraded)"
 };
 
 function save_game() {
@@ -598,7 +598,7 @@ document.getElementById("atom_creator").onclick = function () {
         player.electronClicks -= player.temp_electrons_in_atom;
         hydrogen_3_discovered = "true";
         setTimeout(function () {
-            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!");
+            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!")
         }, 2147483647);
     }
     if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 4) {
@@ -646,11 +646,7 @@ document.getElementById("atom_creator").onclick = function () {
         beryllium_11_discovered = "true";
         setTimeout(function () {
             player.beryllium11Clicks = player.beryllium11Clicks - 1;
-            var eBeryllium11DecayCount = document.getElementById("beryllium_11_count");
-            eBeryllium11DecayCount.innerHTML = player.beryllium11Clicks;
             player.boron11Clicks++;
-            var eBoron12DecayBerylliumName = document.getElementById("boron_11_name");
-            eBoron12DecayBerylliumName.innerHTML = "Boron-12 (5 Protons, 7 Neutrons, 5 Electrons): ";
         }, 13810);
     }
     if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 8 && player.temp_electrons_in_atom == 4) {
@@ -665,10 +661,8 @@ document.getElementById("atom_creator").onclick = function () {
         beryllium_12_discovered = "true";
         setTimeout(function () {
             player.beryllium12Clicks = player.beryllium12Clicks - 1;
-            var eBeryllium12DecayCount = document.getElementById("beryllium_12_count");
-            eBeryllium12DecayCount.innerHTML = player.beryllium12Clicks;
             player.boron12Clicks++;
-            var eBoron12DecayBerylliumName = document.getElementById("boron_12_name");
+            player.boron_12_discovered = "true";
         }, 21);
     }
     if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 5) {
@@ -704,16 +698,14 @@ document.getElementById("atom_creator").onclick = function () {
         player.electronClicks -= player.temp_electrons_in_atom;
         boron_12_discovered = "true";
         setTimeout(function () {
-            alert("Carbon-12, which Boron-12 decays into with a 98.4% chance after 20 milliseconds, has not been defined, and therefore, this atom will disappear, returning your particles. Goodbye.");
+            alert("Carbon-12, which Boron-12 decays into after 20.20 milliseconds, has not been defined het, and so this atom will disappear. Thank you for your time.");
             player.boron12Clicks = player.boron12Clicks - 1;
-            var eBoron12DecayCount = document.getElementById("boron_12_count");
-            eBoron12DecayCount.innerHTML = player.boron12Clicks;
             player.protonClicks += 5;
-            player.neutronClicks += 7;
             player.electronClicks += 5;
+            player.neutronClicks += 7;
         }, 20);
     }
-}
+};
 document.getElementById("atom_recipe_unlock").onclick = function () {
     if (player.protonClicks < 15) {
         return;
@@ -845,6 +837,15 @@ document.getElementById("atom_recipe_unlock").onclick = function () {
         var eBoron11 = document.getElementById("boron_11_name");
         eBoron11.innerHTML = "Boron-11 (5 Protons, 6 Neutrons, 5 Electrons): ";
         player.boron_11_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.boron_12_discovered == "false") {
+        var eBoron12 = document.getElementById("boron_12_name");
+        eBoron12.innerHTML = "Boron-12 (5 Protons, 7 Neutrons, 5 Electrons): ";
+        player.boron_12_discovered = "true";
         player.protonClicks -= 15;
         player.electronClicks -= 15;
         player.neutronClicks -= 15;
