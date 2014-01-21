@@ -159,7 +159,8 @@ function update_total_clicks() {
     var eBoron12 = document.getElementById("boron_12_count");
     eBoron12.innerHTML = player.boron12Clicks;
 }
-document.getElementById("up_quark").onclick = function () {
+var upQuark = document.getElementById("up_quark");
+upQuark.onclick = function () {
     player.upQuarkClicks++;
     update_total_clicks();
 };
