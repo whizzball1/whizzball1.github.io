@@ -54,6 +54,7 @@ var player = {
     beryllium12Clicks: 0,
     boron10Clicks: 0,
     boron11Clicks: 0,
+    boron12Clicks: 0,
     hydrogen_2_discovered: "false",
     hydrogen_1_discovered: "false",
     hydrogen_3_discovered: "false",
@@ -67,7 +68,8 @@ var player = {
     beryllium_11_discovered: "false",
     beryllium_12_discovered: "false",
     boron_10_discovered: "false",
-    boron_11_discovered: "false"
+    boron_11_discovered: "false",
+    boron_12_discovered: "false"
 };
 
 function set_cookie(cookie_name, value) {
@@ -165,6 +167,8 @@ function update_total_clicks() {
     eBoron10.innerHTML = player.boron10Clicks;
     var eBoron11 = document.getElementById("boron_11_count");
     eBoron11.innerHTML = player.boron11Clicks;
+    var eBoron12 = document.getElementById("boron_12_count");
+    eBoron12.innerHTML = player.boron12Clicks;
 }
 document.getElementById("up_quark").onclick = function () {
     player.upQuarkClicks++;
@@ -431,6 +435,9 @@ function load_game() {
     if (!("boron11Clicks" in player)) {
         player.boron11Clicks = 0;
     }
+    if (!("boron12Clicks" in player)) {
+        player.boron12Clicks = 0;
+    }
     if (!("hydrogen_2_discovered" in player)) {
         player.hydrogen_2_discovered = "false";
     }
@@ -472,6 +479,9 @@ function load_game() {
     }
     if (!("boron_11_discovered" in player)) {
         player.boron_11_discovered = "false";
+    }
+    if (!("boron_12_discovered" in player)) {
+        player.boron_12_discovered = "false";
     }
     player = save_data;
     update_view();
@@ -646,13 +656,8 @@ document.getElementById("atom_creator").onclick = function () {
         player.electronClicks -= player.temp_electrons_in_atom;
         beryllium_11_discovered = "true";
         setTimeout(function () {
-            alert("Boron-11, which Beryllium-11 decays into after 13.81 seconds, has not been defined yet, and so this atom will disappear. Thank you for your time.");
             player.beryllium11Clicks = player.beryllium11Clicks - 1;
-            var eBeryllium11DecayCount = document.getElementById("beryllium_11_count");
-            eBeryllium11DecayCount.innerHTML = player.beryllium11Clicks;
-            player.protonClicks += 4;
-            player.neutronClicks += 7;
-            player.electronClicks += 4;
+            player.boron11Clicks++;
         }, 13810);
     }
     if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 8 && player.temp_electrons_in_atom == 4) {
@@ -666,13 +671,9 @@ document.getElementById("atom_creator").onclick = function () {
         player.electronClicks -= player.temp_electrons_in_atom;
         beryllium_12_discovered = "true";
         setTimeout(function () {
-            alert("Boron-12, which Beryllium-12 decays into after 21 milliseconds, has not been defined yet, and so this atom will disappear. Thank you for your time.");
             player.beryllium12Clicks = player.beryllium12Clicks - 1;
-            var eBeryllium12DecayCount = document.getElementById("beryllium_12_count");
-            eBeryllium12DecayCount.innerHTML = player.beryllium12Clicks;
-            player.protonClicks += 4;
-            player.neutronClicks += 8;
-            player.electronClicks += 4;
+            player.boron12Clicks++;
+            player.boron_12_discovered = "true";
         }, 21);
     }
     if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 5) {
@@ -696,6 +697,24 @@ document.getElementById("atom_creator").onclick = function () {
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
         boron_11_discovered = "true";
+    }
+    if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 7 && player.temp_electrons_in_atom == 5) {
+        player.boron12Clicks++;
+        var eBoron12Name = document.getElementById("boron_12_name");
+        eBoron12Name.innerHTML = "Boron-12 (5 Protons, 7 Neutrons, 5 Electrons): ";
+        var eBoron12Count = document.getElementById("boron_12_count");
+        eBoron12Count.innerHTML = player.boron12Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        boron_12_discovered = "true";
+        setTimeout(function () {
+            alert("Carbon-12, which Boron-12 decays into after 20.20 milliseconds, has not been defined het, and so this atom will disappear. Thank you for your time.");
+            player.boron12Clicks = player.boron12Clicks - 1;
+            player.protonClicks += 5;
+            player.electronClicks += 5;
+            player.neutronClicks += 7;
+        }, 20);
     }
 };
 document.getElementById("atom_recipe_unlock").onclick = function () {
@@ -829,6 +848,15 @@ document.getElementById("atom_recipe_unlock").onclick = function () {
         var eBoron11 = document.getElementById("boron_11_name");
         eBoron11.innerHTML = "Boron-11 (5 Protons, 6 Neutrons, 5 Electrons): ";
         player.boron_11_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
+    if (player.boron_12_discovered == "false") {
+        var eBoron12 = document.getElementById("boron_12_name");
+        eBoron12.innerHTML = "Boron-12 (5 Protons, 7 Neutrons, 5 Electrons): ";
+        player.boron_12_discovered = "true";
         player.protonClicks -= 15;
         player.electronClicks -= 15;
         player.neutronClicks -= 15;
@@ -1084,6 +1112,8 @@ setInterval(function () {
                 <br /> <span id="boron_10_name">Not Discovered:</span>  <span id="boron_10_count">0</span>
                 
                 <br /> <span id="boron_11_name">Not Discovered:</span>  <span id="boron_11_count">0</span>
+                
+                <br /> <span id="boron_12_name">Not Discovered:</span>  <span id="boron_12_count">0</span>
             </p>
         </div>
         
