@@ -164,15 +164,15 @@ function upQuarkClick() {
     player.upQuarkClicks++;
     update_total_clicks();
 };
-document.getElementById("electron").onclick = function () {
+function electronClick() {
     player.electronClicks++;
     update_total_clicks();
 };
-document.getElementById("down_quark").onclick = function () {
+function downQuarkClick() {
     player.downQuarkClicks++;
     update_total_clicks();
 };
-document.getElementById("buy_up_quark_click").onclick = function () {
+function buyUpQuarkClick() {
     if (player.upQuarkClicks < player.up_quark_click_cost) {
         return;
     }
@@ -186,7 +186,7 @@ document.getElementById("buy_up_quark_click").onclick = function () {
     eTwo.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)";
     update_total_clicks();
 };
-document.getElementById("buy_electron_click").onclick = function () {
+function buyDownQuarkClick() {
     if (player.electronClicks < player.electron_click_cost) {
         return;
     }
@@ -200,7 +200,7 @@ document.getElementById("buy_electron_click").onclick = function () {
     e2.innerHTML = 'Buy an electron synthesiser for ' + player.electron_click_cost + " electrons";
     update_total_clicks();
 };
-document.getElementById("buy_down_quark_click").onclick = function () {
+function buyElectronClick() {
     if (player.downQuarkClicks < player.down_quark_click_cost) {
         return;
     }
@@ -214,7 +214,7 @@ document.getElementById("buy_down_quark_click").onclick = function () {
     eTwo.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)";
     update_total_clicks();
 };
-document.getElementById("buy_proton_click").onclick = function () {
+function buyProtonClick() {
     if (player.protonClicks < player.proton_click_cost) {
         return;
     }
@@ -228,7 +228,7 @@ document.getElementById("buy_proton_click").onclick = function () {
     eTwo.innerHTML = "Proton Synthesiser (" + player.proton_click_cost + " protons)";
     update_total_clicks();
 };
-document.getElementById("buy_neutron_click").onclick = function () {
+function buyNeutronClick() {
     if (player.neutronClicks < player.neutron_click_cost) {
         return;
     }
@@ -242,7 +242,7 @@ document.getElementById("buy_neutron_click").onclick = function () {
     eTwo.innerHTML = "Neutron Synthesiser (" + player.neutron_click_cost + " neutrons)";
     update_total_clicks();
 };
-document.getElementById("upgrade_up_quark_click_1").onclick = function () {
+function upgradeUpQuarkClick1() {
     if (player.upgrade_up_quark_click_1_bought == "True") {
         return;
     }
@@ -256,7 +256,7 @@ document.getElementById("upgrade_up_quark_click_1").onclick = function () {
     var e = document.getElementById("upgrade_up_quark_click_1_text")
     e.innerHTML = "(Already upgraded)"
 };
-document.getElementById("upgrade_electron_click_1").onclick = function () {
+function upgradeElectronClick1() {
     if (player.upgrade_electron_click_1_bought == "True") {
         return;
     }
@@ -270,7 +270,7 @@ document.getElementById("upgrade_electron_click_1").onclick = function () {
     var e = document.getElementById("upgrade_electron_click_1_text")
     e.innerHTML = "(Already upgraded)"
 };
-document.getElementById("upgrade_down_quark_click_1").onclick = function () {
+function upgradeDownQuarkClick1() {
     if (player.upgrade_down_quark_click_1_bought == "True") {
         return;
     }
@@ -476,13 +476,7 @@ function load_game() {
     player = save_data;
     update_view();
 }
-document.getElementById("load").onclick = function () {
-    load_game();
-};
-document.getElementById("save").onclick = function () {
-    save_game();
-};
-document.getElementById("proton").onclick = function () {
+function protonClick() {
     if (player.upQuarkClicks < player.proton_up_quark_cost) {
         return;
     }
@@ -494,7 +488,7 @@ document.getElementById("proton").onclick = function () {
     player.protonClicks = player.protonClicks + 1;
     update_total_clicks();
 };
-document.getElementById("neutron").onclick = function () {
+function neutronClick() {
     if (player.upQuarkClicks < player.neutron_up_quark_cost) {
         return;
     }
@@ -506,7 +500,7 @@ document.getElementById("neutron").onclick = function () {
     player.neutronClicks = player.neutronClicks + 1;
     update_total_clicks();
 };
-document.getElementById("atom_creator").onclick = function () {
+function atomCreator() {
     var eProtons = document.getElementById("protons_in_atom");
     player.temp_protons_in_atom = eProtons.options[eProtons.selectedIndex].text;
     var eNeutrons = document.getElementById("neutrons_in_atom");
@@ -707,7 +701,7 @@ document.getElementById("atom_creator").onclick = function () {
         }, 20);
     }
 };
-document.getElementById("atom_recipe_unlock").onclick = function () {
+function atomRecipeUnlock() {
     if (player.protonClicks < 15) {
         return;
     }
@@ -855,7 +849,7 @@ document.getElementById("atom_recipe_unlock").onclick = function () {
     var atomUnlockText = document.getElementById("atom_unlock_text");
     atomUnlockText.innerHTML = "There are no more atom recipes to unlock.";
 };
-document.getElementById("sell_up_quark_click").onclick = function () {
+function sellUpQuarkClick() {
     if (player.auto_up_quark_clicks == 0) {
         return;
     }
@@ -863,7 +857,7 @@ document.getElementById("sell_up_quark_click").onclick = function () {
     player.up_quark_click_cost = player.up_quark_click_cost / 1.25;
     update_total_clicks();
 };
-document.getElementById("sell_down_quark_click").onclick = function () {
+function sellDownQuarkClick() {
     if (player.auto_down_quark_clicks == 0) {
         return;
     }
@@ -871,7 +865,7 @@ document.getElementById("sell_down_quark_click").onclick = function () {
     player.down_quark_click_cost = player.down_quark_click_cost / 1.25;
     update_total_clicks();
 };
-document.getElementById("sell_electron_click").onclick = function () {
+function sellElectronClick() {
     if (player.auto_electron_clicks == 0) {
         return;
     }
@@ -879,7 +873,7 @@ document.getElementById("sell_electron_click").onclick = function () {
     player.electron_click_cost = player.electron_click_cost / 1.25;
     update_total_clicks();
 };
-document.getElementById("sell_proton_click").onclick = function () {
+function sellProtonClick() {
     if (player.auto_proton_clicks == 0) {
         return;
     }
@@ -887,7 +881,7 @@ document.getElementById("sell_proton_click").onclick = function () {
     player.proton_click_cost = player.proton_click_cost / 1.25;
     update_total_clicks();
 };
-document.getElementById("sell_neutron_click").onclick = function () {
+function sellNeutronClick() {
     if (player.auto_neutron_clicks == 0) {
         return;
     }
