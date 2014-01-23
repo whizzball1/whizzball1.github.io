@@ -14,8 +14,8 @@
      <h1>Periodic Alchemy <small>An Incremental</small></h1>
 
     <div id="saveload">
-      <button id="save" type="button" class="btn btn-primary">Save</button>
-      <button id="load" type="button" class="btn btn-primary">Load</button>
+      <button id="save" type="button" class="btn btn-primary" onclick="save_game()">Save</button>
+      <button id="load" type="button" class="btn btn-primary" onclick="load_game()">Load</button>
     </div>
     <ul class="nav nav-tabs" id="myTab">
         <li><a href="#home" data-toggle="tab">Home</a>
@@ -32,11 +32,11 @@
         <div class="tab-pane fade in active" id="home">
             <h3>Click</h3>
             <button id="up_quark" type="button" class="btn btn-primary" onclick="upQuarkClick()">Up Quark</button>
-            <button id="electron" type="button" class="btn btn-primary">Electron</button>
-            <button id="down_quark" type="button" class="btn btn-primary">Down Quark</button>
+            <button id="electron" type="button" class="btn btn-primary" onclick="electronClick()">Electron</button>
+            <button id="down_quark" type="button" class="btn btn-primary" onclick="downQuarkClick()">Down Quark</button>
             <br></br>
-            <button id="proton" type="button" class="btn btn-primary">Proton (2 up quarks, 1 down quark)</button>
-            <button id="neutron" type="button" class="btn btn-primary">Neutron (2 down quarks, 1 up quark)</button>
+            <button id="proton" type="button" class="btn btn-primary" onclick="protonClick">Proton (2 up quarks, 1 down quark)</button>
+            <button id="neutron" type="button" class="btn btn-primary" onclick="neutronClick">Neutron (2 down quarks, 1 up quark)</button>
             <br></br>
             <table>
               <tr>
@@ -87,32 +87,32 @@
             </table>
             
             <h3>Buy</h3>
-            <button id="buy_up_quark_click" type="button" class="btn btn-primary">Up Quark Synthesiser (15 up quarks)</button>
-            <button id="buy_electron_click" type="button" class="btn btn-primary">Electron Synthesiser (15 electrons)</button>
-            <button id="buy_down_quark_click" type="button" class="btn btn-primary">Down Quark Synthesiser (15 down quarks)</button>
+            <button id="buy_up_quark_click" type="button" class="btn btn-primary" onclick="buyUpQuarkClick()">Up Quark Synthesiser (15 up quarks)</button>
+            <button id="buy_electron_click" type="button" class="btn btn-primary" onclick="buyDownQuarkClick()">Electron Synthesiser (15 electrons)</button>
+            <button id="buy_down_quark_click" type="button" class="btn btn-primary" onclick="buyElectronClick()">Down Quark Synthesiser (15 down quarks)</button>
             <br></br>
-            <button id="buy_proton_click" type="button" class="btn btn-primary">Proton Synthesiser (15 protons)</button>
-            <button id="buy_neutron_click" type="button" class="btn btn-primary">Neutron Synthesiser (15 neutrons)</button>
+            <button id="buy_proton_click" type="button" class="btn btn-primary" onclick="buyProtonClick()">Proton Synthesiser (15 protons)</button>
+            <button id="buy_neutron_click" type="button" class="btn btn-primary" onclick="buyNeutronClick()">Neutron Synthesiser (15 neutrons)</button>
             <br></br>
-            <button id="atom_recipe_unlock" type="button" class="btn btn-primary"><span id="atom_unlock_text">Unlock one atom recipe (15 protons, 15 electrons, 15 neutrons)</span></button>
+            <button id="atom_recipe_unlock" type="button" class="btn btn-primary" onclick="atomRecipeUnlock()"><span id="atom_unlock_text">Unlock one atom recipe (15 protons, 15 electrons, 15 neutrons)</span></button>
 
             <h3>Upgrade</h3>
             
-            <button id="upgrade_up_quark_click_1" type="button" class="btn btn-primary">
+            <button id="upgrade_up_quark_click_1" type="button" class="btn btn-primary" onclick="upgradeUpQuarkClick1()">
               Double Up
             </button>
             Up quark synthesisers are twice as efficient.
             <span id="upgrade_up_quark_click_1_text">(50 up quarks)</span>
             <br></br>
             
-            <button id="upgrade_electron_click_1" type="button" class="btn btn-primary">
+            <button id="upgrade_electron_click_1" type="button" class="btn btn-primary" onclick="upgradeElectronClick1()">
               Can You Believe It's Fundamental?
             </button>
             Electron synthesisers are twice as efficient.
             <span id="upgrade_electron_click_1_text">(50 electrons)</span>
             <br></br>
             
-            <button id="upgrade_down_quark_click_1" type="button" class="btn btn-primary">
+            <button id="upgrade_down_quark_click_1" type="button" class="btn btn-primary" onclick="upgradeDownQuarkClick1()">
               Down and Out and In Again
             </button>
             Down quark synthesisers are twice as efficient.
@@ -120,11 +120,11 @@
             <br></br>
             
             <h3>Discard <small>(no refunds)</small></h3>
-            <button id="sell_up_quark_click" type="button" class="btn btn-primary discard">Up Quark Synthesiser</button>
-            <button id="sell_electron_click" type="button" class="btn btn-primary discard">Electron Synthesiser</button>
-            <button id="sell_down_quark_click" type="button" class="btn btn-primary discard">Down Quark Synthesiser</button>
-            <button id="sell_proton_click" type="button" class="btn btn-primary discard">Proton Synthesiser</button>
-            <button id="sell_neutron_click" type="button" class="btn btn-primary discard">Neutron Synthesiser</button>
+            <button id="sell_up_quark_click" type="button" class="btn btn-primary discard" onclick="sellUpQuarkClick()">Up Quark Synthesiser</button>
+            <button id="sell_electron_click" type="button" class="btn btn-primary discard" onclick="sellElectronClick()">Electron Synthesiser</button>
+            <button id="sell_down_quark_click" type="button" class="btn btn-primary discard" onclick="sellDownQuarkClick()">Down Quark Synthesiser</button>
+            <button id="sell_proton_click" type="button" class="btn btn-primary discard" onclick="sellProtonClick()">Proton Synthesiser</button>
+            <button id="sell_neutron_click" type="button" class="btn btn-primary discard" onclick="sellNeutronClick()">Neutron Synthesiser</button>
         </div>
         
         <div class="tab-pane fade" id="atoms">
@@ -166,7 +166,7 @@
                     </table>
                   </form>
                 </td><td>
-                  <button id="atom_creator" type="submit" class="btn btn-primary">Create your atom!</button>
+                  <button id="atom_creator" type="submit" class="btn btn-primary" onclick="atomCreator">Create your atom!</button>
             </td></tr></table>
             <br></br>
             <p><span id="hydrogen_1_protium_name">Not Discovered:</span>  <span id="hydrogen_1_protium_count">0</span>
