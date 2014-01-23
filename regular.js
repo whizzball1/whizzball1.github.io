@@ -160,7 +160,7 @@ function update_total_clicks() {
     eBoron12.innerHTML = player.boron12Clicks;
 }
 
-document.getElementById("up_quark").onclick = function () {
+function upQuarkClick() {
     player.upQuarkClicks++;
     update_total_clicks();
 };
