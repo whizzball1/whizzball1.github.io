@@ -844,6 +844,15 @@ function atomRecipeUnlock() {
         player.neutronClicks -= 15;
         return;
     }
+    if (player.boron_8_discovered == "false") {
+        var eBoron8 = document.getElementById("boron_8_name");
+        eBoron8.innerHTML = "Boron-8 (5 Protons, 3 Neutrons, 5 Electrons): ";
+        player.boron_8_discovered = "true";
+        player.protonClicks -= 15;
+        player.electronClicks -= 15;
+        player.neutronClicks -= 15;
+        return;
+    }
     if (player.boron_10_discovered == "false") {
         var eBoron10 = document.getElementById("boron_10_name");
         eBoron10.innerHTML = "Boron-10 (5 Protons, 5 Neutrons, 5 Electrons): ";
