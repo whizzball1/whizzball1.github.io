@@ -41,6 +41,7 @@ var player = {
     beryllium10Clicks: 0,
     beryllium11Clicks: 0,
     beryllium12Clicks: 0,
+    boron8Clicks: 0,
     boron10Clicks: 0,
     boron11Clicks: 0,
     boron12Clicks: 0,
@@ -56,9 +57,10 @@ var player = {
     beryllium_10_discovered: "false",
     beryllium_11_discovered: "false",
     beryllium_12_discovered: "false",
+    boron_8_discovered: "false",
     boron_10_discovered: "false",
     boron_11_discovered: "false",
-    boron_12_discovered: "false"
+    boron_12_discovered: "false",
 };
 
 function set_cookie(cookie_name, value) {
@@ -152,6 +154,8 @@ function update_total_clicks() {
     eBeryllium11.innerHTML = player.beryllium11Clicks;
     var eBeryllium12 = document.getElementById("beryllium_12_count");
     eBeryllium12.innerHTML = player.beryllium12Clicks;
+    var eBoron8 = document.getElementById("boron_8_count");
+    eBoron8.innerHTML = player.boron10Clicks;
     var eBoron10 = document.getElementById("boron_10_count");
     eBoron10.innerHTML = player.boron10Clicks;
     var eBoron11 = document.getElementById("boron_11_count");
@@ -464,6 +468,9 @@ function load_game() {
     if (!("beryllium_12_discovered" in player)) {
         player.beryllium_12_discovered = "false";
     }
+    if (!("boron_8_discovered" in player)) {
+        player.boron_8_discovered = "false";
+    }
     if (!("boron_10_discovered" in player)) {
         player.boron_10_discovered = "false";
     }
@@ -659,6 +666,24 @@ function atomCreator() {
             player.boron12Clicks++;
             player.boron_12_discovered = "true";
         }, 21);
+    }
+    if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 3 && player.temp_electrons_in_atom == 5) {
+        player.boron8Clicks++;
+        var eBoron8Name = document.getElementById("boron_8_name");
+        eBoron8Name.innerHTML = "Boron-8 (5 Protons, 3 Neutrons, 5 Electrons): ";
+        var eBoron8Count = document.getElementById("boron_8_count");
+        eBoron8Count.innerHTML = player.boron8Clicks;
+        player.protonClicks -= player.temp_protons_in_atom;
+        player.neutronClicks -= player.temp_neutrons_in_atom;
+        player.electronClicks -= player.temp_electrons_in_atom;
+        boron_8_discovered = "true";
+        setTimeout(function () {
+            player.boron8Clicks = player.boron8Clicks - 1;
+            player.helium4Clicks += 2;
+            player.helium_4_discovered = "true";
+            player.protonClicks++;
+            player.electronClicks++;
+        }, 770);
     }
     if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 5) {
         player.boron10Clicks++;
