@@ -1,3 +1,4 @@
+'use strict';
 var player = {
     upQuarkClicks: 0,
     electronClicks: 0,
@@ -101,12 +102,12 @@ function update_view() {
     if (player.upgrade_down_quark_click_1_bought == "True") {
         eDownQuarkAutoText1.innerHTML = "(Already upgraded)";
     }
-    var eUpQuarkClickText = document.getElementById("buy_up_quark_click")
-    eUpQuarkClickText.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)"
-    var eElectronClickText = document.getElementById("buy_electron_click")
-    eElectronClickText.innerHTML = "Electron Synthesiser (" + player.electron_click_cost + " electrons)"
-    var eDownQuarkClickText = document.getElementById("buy_down_quark_click")
-    eDownQuarkClickText.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)"
+    var eUpQuarkClickText = document.getElementById("buy_up_quark_click");
+    eUpQuarkClickText.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)";
+    var eElectronClickText = document.getElementById("buy_electron_click");
+    eElectronClickText.innerHTML = "Electron Synthesiser (" + player.electron_click_cost + " electrons)";
+    var eDownQuarkClickText = document.getElementById("buy_down_quark_click");
+    eDownQuarkClickText.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)";
 }
 
 function update_total_clicks() {
@@ -167,15 +168,15 @@ function update_total_clicks() {
 function upQuarkClick() {
     player.upQuarkClicks++;
     update_total_clicks();
-};
+}
 function electronClick() {
     player.electronClicks++;
     update_total_clicks();
-};
+}
 function downQuarkClick() {
     player.downQuarkClicks++;
     update_total_clicks();
-};
+}
 function buyUpQuarkClick() {
     if (player.upQuarkClicks < player.up_quark_click_cost) {
         return;
@@ -189,7 +190,7 @@ function buyUpQuarkClick() {
     var eTwo = document.getElementById("buy_up_quark_click");
     eTwo.innerHTML = "Up Quark Synthesiser (" + player.up_quark_click_cost + " up quarks)";
     update_total_clicks();
-};
+}
 function buyDownQuarkClick() {
     if (player.electronClicks < player.electron_click_cost) {
         return;
@@ -203,7 +204,7 @@ function buyDownQuarkClick() {
     var e2 = document.getElementById("buy_electron_click");
     e2.innerHTML = 'Buy an electron synthesiser for ' + player.electron_click_cost + " electrons";
     update_total_clicks();
-};
+}
 function buyElectronClick() {
     if (player.downQuarkClicks < player.down_quark_click_cost) {
         return;
@@ -217,7 +218,7 @@ function buyElectronClick() {
     var eTwo = document.getElementById("buy_down_quark_click");
     eTwo.innerHTML = "Down Quark Synthesiser (" + player.down_quark_click_cost + " down quarks)";
     update_total_clicks();
-};
+}
 function buyProtonClick() {
     if (player.protonClicks < player.proton_click_cost) {
         return;
@@ -231,7 +232,7 @@ function buyProtonClick() {
     var eTwo = document.getElementById("buy_proton_click");
     eTwo.innerHTML = "Proton Synthesiser (" + player.proton_click_cost + " protons)";
     update_total_clicks();
-};
+}
 function buyNeutronClick() {
     if (player.neutronClicks < player.neutron_click_cost) {
         return;
@@ -245,7 +246,7 @@ function buyNeutronClick() {
     var eTwo = document.getElementById("buy_neutron_click");
     eTwo.innerHTML = "Neutron Synthesiser (" + player.neutron_click_cost + " neutrons)";
     update_total_clicks();
-};
+}
 function upgradeUpQuarkClick1() {
     if (player.upgrade_up_quark_click_1_bought == "True") {
         return;
@@ -257,9 +258,9 @@ function upgradeUpQuarkClick1() {
     player.auto_up_quark_clicks_amount = 2;
     player.upgrade_up_quark_click_1_bought = "True";
     player.upQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_up_quark_click_1_text")
-    e.innerHTML = "(Already upgraded)"
-};
+    var e = document.getElementById("upgrade_up_quark_click_1_text");
+    e.innerHTML = "(Already upgraded)";
+}
 function upgradeElectronClick1() {
     if (player.upgrade_electron_click_1_bought == "True") {
         return;
@@ -271,9 +272,9 @@ function upgradeElectronClick1() {
     player.auto_electron_clicks_amount = 2;
     player.upgrade_electron_click_1_bought = "True";
     player.electronClicks -= 50;
-    var e = document.getElementById("upgrade_electron_click_1_text")
-    e.innerHTML = "(Already upgraded)"
-};
+    var e = document.getElementById("upgrade_electron_click_1_text");
+    e.innerHTML = "(Already upgraded)";
+}
 function upgradeDownQuarkClick1() {
     if (player.upgrade_down_quark_click_1_bought == "True") {
         return;
@@ -285,9 +286,9 @@ function upgradeDownQuarkClick1() {
     player.auto_down_quark_clicks_amount = 2;
     player.upgrade_down_quark_click_1_bought = "True";
     player.downQuarkClicks -= 50;
-    var e = document.getElementById("upgrade_down_quark_click_1_text")
-    e.innerHTML = "(Already upgraded)"
-};
+    var e = document.getElementById("upgrade_down_quark_click_1_text");
+    e.innerHTML = "(Already upgraded)";
+}
 
 function save_game() {
     var save_game = btoa(JSON.stringify(player));
@@ -494,7 +495,7 @@ function protonClick() {
     player.downQuarkClicks -= player.proton_down_quark_cost;
     player.protonClicks = player.protonClicks + 1;
     update_total_clicks();
-};
+}
 function neutronClick() {
     if (player.upQuarkClicks < player.neutron_up_quark_cost) {
         return;
@@ -506,7 +507,7 @@ function neutronClick() {
     player.downQuarkClicks -= player.neutron_down_quark_cost;
     player.neutronClicks = player.neutronClicks + 1;
     update_total_clicks();
-};
+}
 function atomCreator() {
     var eProtons = document.getElementById("protons_in_atom");
     player.temp_protons_in_atom = eProtons.options[eProtons.selectedIndex].text;
@@ -534,7 +535,7 @@ function atomCreator() {
         player.electronClicks -= player.temp_electrons_in_atom;
         player.hydrogen_2_discovered = "true";
     }
-    if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom == 0 && player.temp_electrons_in_atom == 1) {
+    if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom === 0 && player.temp_electrons_in_atom == 1) {
         player.hydrogen1ProtiumClicks++;
         var eHydrogen1ProtiumName = document.getElementById("hydrogen_1_protium_name");
         eHydrogen1ProtiumName.innerHTML = "Hydrogen-1 (Protium) (1 Proton, 1 Electron): ";
@@ -600,7 +601,7 @@ function atomCreator() {
         player.electronClicks -= player.temp_electrons_in_atom;
         hydrogen_3_discovered = "true";
         setTimeout(function () {
-            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!")
+            alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!");
         }, 2147483647);
     }
     if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 5 && player.temp_electrons_in_atom == 4) {
@@ -725,7 +726,7 @@ function atomCreator() {
             player.neutronClicks += 7;
         }, 20);
     }
-};
+}
 function atomRecipeUnlock() {
     if (player.protonClicks < 15) {
         return;
