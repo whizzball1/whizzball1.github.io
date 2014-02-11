@@ -566,7 +566,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        helium_4_discovered = "true";
+        player.helium_4_discovered = "true";
     }
     if (player.temp_protons_in_atom == 3 && player.temp_neutrons_in_atom == 3 && player.temp_electrons_in_atom == 3) {
         player.lithium6Clicks++;
@@ -577,7 +577,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        lithium_6_discovered = "true";
+        player.lithium_6_discovered = "true";
     }
     if (player.temp_protons_in_atom == 3 && player.temp_neutrons_in_atom == 4 && player.temp_electrons_in_atom == 3) {
         player.lithium7Clicks++;
@@ -588,7 +588,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        lithium_7_discovered = "true";
+        player.lithium_7_discovered = "true";
     }
     if (player.temp_protons_in_atom == 1 && player.temp_neutrons_in_atom == 2 && player.temp_electrons_in_atom == 1) {
         player.hydrogen3TritiumClicks++;
@@ -599,7 +599,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        hydrogen_3_discovered = "true";
+        player.hydrogen_3_discovered = "true";
         setTimeout(function () {
             alert("I don't believe you really waited this long. In fact, this alert is only here because I know that someone's going to look at the code and find it. I'm not even going to make anything else. Hullo, future code reader!");
         }, 2147483647);
@@ -613,7 +613,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        beryllium_9_discovered = "true";
+        player.beryllium_9_discovered = "true";
     }
     if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 3 && player.temp_electrons_in_atom == 4) {
         player.beryllium7Clicks++;
@@ -624,7 +624,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        beryllium_7_discovered = "true";
+        player.beryllium_7_discovered = "true";
     }
     if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 4) {
         player.beryllium10Clicks++;
@@ -635,7 +635,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        beryllium_10_discovered = "true";
+        player.beryllium_10_discovered = "true";
     }
     if (player.temp_protons_in_atom == 4 && player.temp_neutrons_in_atom == 7 && player.temp_electrons_in_atom == 4) {
         player.beryllium11Clicks++;
@@ -646,7 +646,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        beryllium_11_discovered = "true";
+        player.beryllium_11_discovered = "true";
         setTimeout(function () {
             player.beryllium11Clicks = player.beryllium11Clicks - 1;
             player.boron11Clicks++;
@@ -661,7 +661,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        beryllium_12_discovered = "true";
+        player.beryllium_12_discovered = "true";
         setTimeout(function () {
             player.beryllium12Clicks = player.beryllium12Clicks - 1;
             player.boron12Clicks++;
@@ -677,10 +677,10 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        boron_8_discovered = "true";
+        player.boron_8_discovered = "true";
         setTimeout(function () {
             player.boron8Clicks = player.boron8Clicks - 1;
-            player.helium4Clicks += 2;
+            player.helium4Clicks = player.helium4Clicks + 2;
             player.helium_4_discovered = "true";
             player.protonClicks++;
             player.electronClicks++;
@@ -695,7 +695,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        boron_10_discovered = "true";
+        player.boron_10_discovered = "true";
     }
     if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 6 && player.temp_electrons_in_atom == 5) {
         player.boron11Clicks++;
@@ -706,7 +706,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        boron_11_discovered = "true";
+        player.boron_11_discovered = "true";
     }
     if (player.temp_protons_in_atom == 5 && player.temp_neutrons_in_atom == 7 && player.temp_electrons_in_atom == 5) {
         player.boron12Clicks++;
@@ -717,7 +717,7 @@ function atomCreator() {
         player.protonClicks -= player.temp_protons_in_atom;
         player.neutronClicks -= player.temp_neutrons_in_atom;
         player.electronClicks -= player.temp_electrons_in_atom;
-        boron_12_discovered = "true";
+        player.boron_12_discovered = "true";
         setTimeout(function () {
             alert("Carbon-12, which Boron-12 decays into after 20.20 milliseconds, has not been defined het, and so this atom will disappear. Thank you for your time.");
             player.boron12Clicks = player.boron12Clicks - 1;
