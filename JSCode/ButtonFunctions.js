@@ -1,4 +1,4 @@
 function upQuarkClick() {
   player.clicks.UQ += player.clickValues.UQ;
-  update_clicks();
+  update_clicks(player);
 }
