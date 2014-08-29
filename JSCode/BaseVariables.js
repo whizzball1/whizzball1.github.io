@@ -11,5 +11,6 @@ var player = {
   },
   clickValues: {
     UQ: 1,
+    electron: 1,
   }
 };
