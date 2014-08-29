@@ -35,10 +35,10 @@
             <button id="up_quark" type="button" class="btn btn-primary" onclick="upQuarkClick()">Up Quark</button>
             <button id="electron" type="button" class="btn btn-primary" onclick="electronClick()">Electron</button>
             <button id="down_quark" type="button" class="btn btn-primary" onclick="downQuarkClick()">Down Quark</button>
-            <br></br>
+            <br />
             <button id="proton" type="button" class="btn btn-primary" onclick="protonClick()">Proton (2 up quarks, 1 down quark)</button>
             <button id="neutron" type="button" class="btn btn-primary" onclick="neutronClick()">Neutron (2 down quarks, 1 up quark)</button>
-            <br></br>
+            <br />
             <table>
               <tr>
                 <td>Up Quarks:</td>
@@ -46,7 +46,7 @@
                 <td>+</td>
                 <td id="up_quarks_per_second">0</td>
                 <td>per</td>
-                <td id="time_period">1.00</td>
+                <td id="uq_time_period">1.00</td>
                 <td>second</td>
               </tr>
               <tr>
@@ -55,7 +55,7 @@
                 <td>+</td>
                 <td id="electrons_per_second">0</td>
                 <td>per</td>
-                <td id="time_period">1.00</td>
+                <td id="el_time_period">1.00</td>
                 <td>second</td>
               </tr>
               <tr>
@@ -64,7 +64,7 @@
                 <td>+</td>
                 <td id="down_quarks_per_second">0</td>
                 <td>per</td>
-                <td id="time_period">1.00</td>
+                <td id="dq_time_period">1.00</td>
                 <td>second</td>
               </tr>
               <tr>
@@ -73,7 +73,7 @@
                 <td>+</td>
                 <td id="protons_per_second">0</td>
                 <td>per</td>
-                <td id="time_period">1.00</td>
+                <td id="pro_time_period">1.00</td>
                 <td>second</td>
               </tr>
               <tr>
@@ -82,7 +82,7 @@
                 <td>+</td>
                 <td id="neutrons_per_second">0</td>
                 <td>per</td>
-                <td id="time_period">1.00</td>
+                <td id="neu_time_period">1.00</td>
                 <td>second</td>
               </tr>
             </table>
@@ -91,10 +91,10 @@
             <button id="buy_up_quark_click" type="button" class="btn btn-primary" onclick="buyUpQuarkClick()">Up Quark Synthesiser (15 up quarks)</button>
             <button id="buy_electron_click" type="button" class="btn btn-primary" onclick="buyDownQuarkClick()">Electron Synthesiser (15 electrons)</button>
             <button id="buy_down_quark_click" type="button" class="btn btn-primary" onclick="buyElectronClick()">Down Quark Synthesiser (15 down quarks)</button>
-            <br></br>
+            <br />
             <button id="buy_proton_click" type="button" class="btn btn-primary" onclick="buyProtonClick()">Proton Synthesiser (15 protons)</button>
             <button id="buy_neutron_click" type="button" class="btn btn-primary" onclick="buyNeutronClick()">Neutron Synthesiser (15 neutrons)</button>
-            <br></br>
+            <br />
             <button id="atom_recipe_unlock" type="button" class="btn btn-primary" onclick="atomRecipeUnlock()"><span id="atom_unlock_text">Unlock one atom recipe (15 protons, 15 electrons, 15 neutrons)</span></button>
 
             <h3>Upgrade</h3>
@@ -104,21 +104,21 @@
             </button>
             Up quark synthesisers are twice as efficient.
             <span id="upgrade_up_quark_click_1_text">(50 up quarks)</span>
-            <br></br>
+            <br />
             
             <button id="upgrade_electron_click_1" type="button" class="btn btn-primary" onclick="upgradeElectronClick1()">
               Can You Believe It's Fundamental?
             </button>
             Electron synthesisers are twice as efficient.
             <span id="upgrade_electron_click_1_text">(50 electrons)</span>
-            <br></br>
+            <br />
             
             <button id="upgrade_down_quark_click_1" type="button" class="btn btn-primary" onclick="upgradeDownQuarkClick1()">
               Down and Out and In Again
             </button>
             Down quark synthesisers are twice as efficient.
             <span id="upgrade_down_quark_click_1_text">(50 down quarks)</span>
-            <br></br>
+            <br />
             
             <h3>Discard <small>(no refunds)</small></h3>
             <button id="sell_up_quark_click" type="button" class="btn btn-primary discard" onclick="sellUpQuarkClick()">Up Quark Synthesiser</button>
@@ -129,7 +129,7 @@
         </div>
         
         <div class="tab-pane fade" id="atoms">
-            <br></br>
+            <br />
             <table><tr><td>
                   <form class="form-horizontal" role="form">
                     <table>
@@ -169,7 +169,7 @@
                 </td><td>
                   <button id="atom_creator" type="submit" class="btn btn-primary" onclick="atomCreator()">Create your atom!</button>
             </td></tr></table>
-            <br></br>
+            <br />
             <p><span id="hydrogen_1_protium_name">Not Discovered:</span>  <span id="hydrogen_1_protium_count">0</span>
 
                 <br /> <span id="hydrogen_2_deuterium_name">Not Discovered:</span>  <span id="hydrogen_2_deuterium_count">0</span>
@@ -227,3 +227,4 @@
     </script>
 </div>
 </body>
+</html>
