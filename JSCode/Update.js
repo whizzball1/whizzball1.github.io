@@ -3,11 +3,7 @@ function gameLoop(player) {
   autos = player.autoClicks;
   update_clicks(player);
 }
-function update_clicks(save) {
-  variable = save;
-  if (save === undefined) {
-    variable = player;
-  }
+function update_clicks(player) {
   clicks = variable.clicks;
   document.getElementById("total_up_quark_clicks").innerHTML = clicks.UQ;
 }
