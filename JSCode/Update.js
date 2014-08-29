@@ -1,4 +1,3 @@
-window.onload = function() {
 function gameLoop(player) {
   clicks = player.clicks;
   autos = player.autoClicks;
@@ -9,7 +8,6 @@ function update_clicks(player) {
   document.getElementById("total_up_quark_clicks").innerHTML = clicks.UQ;
 }
 var game = true;
-while (game === true) {
+setInterval(function () {
   gameLoop(player);
-}
-}
+}, 500);
