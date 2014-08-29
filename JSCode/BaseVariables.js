@@ -16,3 +16,5 @@ var player = {
 function upQuarkClick() {
   player.clicks.UQ += player.clickValues.UQ;
 }
+var eUpQuark = document.getElementById("total_up_quark_clicks");
+eUpQuark.innerHTML = clicks.UQ;
