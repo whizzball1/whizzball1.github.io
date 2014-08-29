@@ -1,16 +1,23 @@
 var player = {
   clicks: {
-    upQuark: 0,
-    downQuark: 0,
+    UQ: 0,
+    DQ: 0,
     electron: 0,
     proton: 0,
     neutron: 0
   },
   autoClicks: {
     
+  },
+  clickValues: {
+    UQ: 1,
   }
 };
 function gameLoop(player) {
   clicks = player.clicks;
   autos = player.autoClicks;
 };
+function upQuarkClick() {
+  player.clicks.UQ += player.clickValues.UQ;
+}
+gameLoop(player);
