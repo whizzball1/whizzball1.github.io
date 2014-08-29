@@ -4,7 +4,7 @@ function gameLoop(player) {
   update_clicks(player);
 }
 function update_clicks(player) {
-  clicks = variable.clicks;
+  clicks = player.clicks;
   document.getElementById("total_up_quark_clicks").innerHTML = clicks.UQ;
 }
 var game = true;
