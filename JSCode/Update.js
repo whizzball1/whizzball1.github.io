@@ -4,6 +4,9 @@ function gameLoop(player) {
   update_clicks(player);
 }
 function update_clicks(player) {
+  if (player === undefined) {
+    player = player;
+  }
   clicks = player.clicks;
   document.getElementById("total_up_quark_clicks").innerHTML = clicks.UQ;
 }
