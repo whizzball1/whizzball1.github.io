@@ -6,7 +6,7 @@ function gameLoop(player) {
 function update_clicks(save) {
   variable = save;
   if (save === undefined) {
-    variable = save
+    variable = player;
   }
   clicks = variable.clicks;
   document.getElementById("total_up_quark_clicks").innerHTML = clicks.UQ;
