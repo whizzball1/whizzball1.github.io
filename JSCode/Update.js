@@ -8,5 +8,3 @@ function update_clicks(player) {
   
 }
 gameLoop(player);
-var eUpQuark = document.getElementById("total_up_quark_clicks");
-eUpQuark.innerHTML = clicks.UQ;
