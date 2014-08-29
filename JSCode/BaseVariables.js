@@ -13,12 +13,6 @@ var player = {
     UQ: 1,
   }
 };
-function gameLoop(player) {
-  clicks = player.clicks;
-  autos = player.autoClicks;
-  update_clicks();
-};
 function upQuarkClick() {
   player.clicks.UQ += player.clickValues.UQ;
 }
-gameLoop(player);
