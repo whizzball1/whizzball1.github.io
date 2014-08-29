@@ -13,8 +13,3 @@ var player = {
     UQ: 1,
   }
 };
-function upQuarkClick() {
-  player.clicks.UQ += player.clickValues.UQ;
-}
-clicks = player.clicks;
-document.getElementById("total_up_quark_clicks").innerHTML = clicks.UQ;
