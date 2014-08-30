@@ -16,6 +16,6 @@ function protonClick() {
   }
   player.clicks.UQ -= 2;
   player.clicks.DQ--;
-  player.proton++;
+  player.clicks.proton++;
   update_clicks(player);
 }
