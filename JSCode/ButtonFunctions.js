@@ -19,3 +19,12 @@ function protonClick() {
   player.clicks.proton++;
   update_clicks(player);
 }
+function neutronClick() {
+  if (player.clicks.UQ < 1 || player.clicks.DQ < 2) {
+    return;
+  }
+  player.clicks.DQ -= 2;
+  player.clicks.UQ--;
+  player.clicks.neutron++;
+  update_clicks(player);
+}
