@@ -10,3 +10,6 @@ function downQuarkClick() {
   player.clicks.DQ += player.clickValues.DQ;
   update_clicks(player);
 }
+function protonClick() {
+  if (player.clicks.proton < 2)
+}
