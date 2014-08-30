@@ -16,5 +16,7 @@ var player = {
     UQ: 1,
     electron: 1,
     DQ: 1,
+    proton: 1,
+    neutron: 1
   }
 };
