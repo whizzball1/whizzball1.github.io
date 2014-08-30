@@ -9,6 +9,9 @@ var player = {
   autoClicks: {
     
   },
+  autoTimes: {
+    
+  },
   clickValues: {
     UQ: 1,
     electron: 1,
