@@ -11,5 +11,11 @@ function downQuarkClick() {
   update_clicks(player);
 }
 function protonClick() {
-  if (player.clicks.proton < 2)
+  if (player.clicks.UQ < 2 || player.clicks.DQ < 1) {
+    return;
+  }
+  player.clicks.UQ -= 2;
+  player.clicks.DQ--;
+  player.proton++;
+  update_clicks(player);
 }
