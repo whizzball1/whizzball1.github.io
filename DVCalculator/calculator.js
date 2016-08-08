@@ -85,6 +85,7 @@ var levelDict = {
   20: 10485760,
 }
 tableLength = 1
+currentID = 1
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
@@ -93,6 +94,7 @@ function tableAddDragon(type, level) {
   newRow.id = "dragon" + tableLength;
   tableLength++;
   var nameData = document.createElement("td");
+  var idData = document.createElement("td");
   var levelData = document.createElement("td");
   var earnData = document.createElement("td");
   var dragonName = type;
@@ -100,6 +102,8 @@ function tableAddDragon(type, level) {
   levelData.appendChild(document.createTextNode(level));
   var earning = dragonDict[type][level];
   earnData.appendChild(document.createTextNode(earning));
+  idData.appendChild(document.createTextNode(currentID));
+  currentID++;
   newRow.appendChild(nameData);
   newRow.appendChild(levelData);
   newRow.appendChild(earnData);
@@ -108,7 +112,7 @@ function tableAddDragon(type, level) {
 function calculateEarning() {
   number = 0
   for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
-    number += parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[2].innerHTML)
+    number += parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[3].innerHTML)
   }
   document.getElementById("total_earnings").innerHTML = " Total Coins/Minute: " + number
 }
@@ -134,7 +138,7 @@ function bestDragon(foodType) {
   var dragonTimeDict = []
   for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
     var dragonType = document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[0].innerHTML;
-    var currentLevel = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[1].innerHTML);
+    var currentLevel = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[2].innerHTML);
     times.push(calculateCostEfficiency(currentLevel, dragonType, foodType));
     dragons.push(dragonType);
   }
