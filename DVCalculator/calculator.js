@@ -69,12 +69,15 @@ function tableAddDragon(type, level) {
   newRow.id = "dragon" + tableLength;
   tableLength++;
   var nameData = document.createElement("td");
+  var levelData = document.createElement("td");
   var earnData = document.createElement("td");
   var dragonName = type + " Dragon";
   nameData.appendChild(document.createTextNode(dragonName));
+  levelData.appendChild(document.createTextNode(level));
   var earning = dragonDict[type][level];
   earnData.appendChild(document.createTextNode(earning));
   newRow.appendChild(nameData);
+  newRow.appendChild(levelData);
   newRow.appendChild(earnData);
   document.getElementById("dragon_table").childNodes[1].appendChild(newRow)
 }
