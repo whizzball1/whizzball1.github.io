@@ -18,9 +18,14 @@
 	</table>
 	<div class="form-group row">
 		<div class="col-md-4"><button type="button" class="btn btn-primary" onclick="addDragonButton()">Add Dragon</button></div>
-		<div class="col-md-2"><span style="text-align:right;">Dragon Type: </span></div>
-		<div class="col-md-2"><select class="form-control" id="dragon_type">
+		<div class="col-md-1" style="width: 10%;"><span style="text-align:right;">Dragon Type: </span></div>
+		<div class="col-md-3"><select class="form-control" id="dragon_type">
 			<option>Plant</option>
+		</select></div>
+		<div class="col-md-1" style="width: 5%"><span style="text-align:right;">Level: </span></div>
+		<div class="col-md-1"><select class="form-control" id="dragon_level">
+			<option>1</option>
+			<option>2</option>
 		</select></div>
 	</div>
 	<p><button type="button" class="btn btn-primary" onclick="calculateEarning()">Calculate Earnings</button><span id="total_earnings"> Total Coins/Minute: 0</span></p>
