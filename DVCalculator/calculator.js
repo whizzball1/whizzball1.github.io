@@ -92,3 +92,11 @@ function addDragonButton() {
   var dragonLevel = parseInt(eDragonLevel.options[eDragonLevel.selectedIndex].text);
   tableAddDragon(dragonType, dragonLevel);
 }
+function calculateCostEfficiency(currentLevel, dragonType, foodType) {
+  var nextLevel = currentLevel++;
+  var levelFoodCost = levelDict[nextLevel];
+  var levelCost = levelFoodCost * foodDict[foodType];
+  var nextEarnRate = dragonDict[dragonType][nextLevel]
+  var timeToBreakEven = levelCost / nextEarnRate
+  return Math.round(timeToBreakEven)
+}
