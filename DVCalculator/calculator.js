@@ -148,8 +148,8 @@ function bestDragon(foodType) {
     ids.push[dragonID];
   }
   for (i = 0; i < dragons.length + 1; i++) {
-    dragonTimeDict[times[i]] = ids[i]
-    dragonIdDict[ids[i]] = dragons[i]
+    idTimeDict[times[i]] = ids[i];
+    dragonIdDict[ids[i]] = dragons[i];
   }
   var bestTime = Math.min.apply(Math, times);
   return dragonTimeDict[bestTime];
