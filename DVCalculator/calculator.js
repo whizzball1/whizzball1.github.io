@@ -105,6 +105,7 @@ function tableAddDragon(type, level) {
   currentID++;
   idData.appendChild(document.createTextNode(currentID));
   newRow.appendChild(nameData);
+  newRow.appendChild(idData);
   newRow.appendChild(levelData);
   newRow.appendChild(earnData);
   document.getElementById("dragon_table").childNodes[1].appendChild(newRow)
