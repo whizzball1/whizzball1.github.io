@@ -1,5 +1,6 @@
 var dragonDict = {
   plant: {
+    elements: ["plant"]
     1: 17,
     2: 27,
     3: 38,
