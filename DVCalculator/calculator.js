@@ -21,7 +21,7 @@ var dragonDict = {
     18: 37,
     19: 39,
     20: 41,
-  }
+  },
   "Plant Dragon": {
     elements: ["plant"],
     1: 17,
