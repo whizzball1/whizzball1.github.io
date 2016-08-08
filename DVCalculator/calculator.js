@@ -1,6 +1,6 @@
 var dragonDict = {
   plant: {
-    one: 17,
+    1: 17,
     two: 27,
     three: 38,
     four: 48,
