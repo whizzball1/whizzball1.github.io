@@ -95,8 +95,9 @@ function addDragonButton() {
 function calculateCostEfficiency(currentLevel, dragonType, foodType) {
   var nextLevel = currentLevel + 1;
   var levelFoodCost = levelDict[nextLevel];
-  var levelCost = levelFoodCost * foodDict[foodType];
+  var levelCost = levelFoodCost * foodDict[foodType]
   var nextEarnRate = dragonDict[dragonType][nextLevel];
   var timeToBreakEven = levelCost / nextEarnRate;
-  return Math.round(timeToBreakEven)
+  timeToBreakEven = Math.round(timeToBreakEven);
+  return timeToBreakEven
 }
