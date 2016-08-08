@@ -46,5 +46,5 @@ function calculateEarning() {
   for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
     number += parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[1].innerHTML)
   }
-  return number
+  document.getElementById("total_earnings").innerHTML = " Total Coins/Minute: " + number
 }
