@@ -23,6 +23,43 @@ var dragonDict = {
     20: 213
   }
 }
+// The food dictionary matches the name of a treat group to the cost _per treat_, not per 5 treats or 20 treats.
+var foodDict = {
+  "Dragon Snaps": 10
+  "Dragon Root": 12.5
+  "Zazzberries": 13.33
+  "Blushrooms": 16.67
+  "Pumpermelons": 18.75
+  "Dragon Fruit": 25
+  "Sarjin Pepper": 50
+  "Omega Squash": 50
+  "Beanstalk": 50
+  "Cacti-snack": 80
+  "Kraken Kabbage": 70
+  "Berry Bauble": 65
+}
+// The level dictionary matches the next level your dragon can get to to the food required to get there.
+var levelDict = {
+  2: 40
+  3: 80
+  4: 160
+  5: 320
+  6: 640
+  7: 1280
+  8: 2560
+  9: 5120
+  10: 10240
+  11: 20480
+  12: 40960
+  13: 81920
+  14: 163840
+  15: 327680
+  16: 655360
+  17: 1310720
+  18: 2621440
+  19: 5242880
+  20: 10485760
+}
 tableLength = 1
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
