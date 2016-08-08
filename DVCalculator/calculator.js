@@ -1,5 +1,5 @@
 var dragonDict = {
-  plant: {
+  Plant: {
     elements: ["plant"]
     1: 17,
     2: 27,
@@ -23,6 +23,21 @@ var dragonDict = {
     20: 213
   }
 }
+tableLength = 1
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
+}
+function tableAddDragon(type, level) {
+  var newRow = document.createElement("tr");
+  newRow.id = "dragon" + tableLength;
+  tableLength++;
+  var nameData = document.createElement("td");
+  var earnData = document.createElement("td");
+  var dragonName = type + " Dragon";
+  nameData.appendChild(document.createTextNode(dragonName));
+  var earning = dragonDict[type][level];
+  earnData.appendChild(document.createTextNode(earning));
+  newRow.appendChild(nameData);
+  newRow.appendChild(earnData);
+  document.getElementById("dragon_table").childNodes[1].appendChild(newRow)
 }
