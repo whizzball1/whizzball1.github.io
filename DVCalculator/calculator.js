@@ -113,7 +113,7 @@ function calculateEarning() {
 }
 function addDragonButton() {
   var eDragonType = document.getElementById("dragon_type");
-  var dragonType = eDragonType.options[eDragonType.selectedIndex].text + " Dragon";
+  var dragonType = eDragonType.options[eDragonType.selectedIndex].text;
   var eDragonLevel = document.getElementById("dragon_level");
   var dragonLevel = parseInt(eDragonLevel.options[eDragonLevel.selectedIndex].text);
   tableAddDragon(dragonType, dragonLevel);
