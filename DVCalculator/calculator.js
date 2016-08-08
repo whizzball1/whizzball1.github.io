@@ -1,8 +1,8 @@
 var dragonDict = {
   "Iron Dragon": {
     elements: ["earth", "metal"],
-    1: 17,
-    2: 5,
+    1: 5,
+    2: 27,
     3: 7,
     4: 9,
     5: 11,
