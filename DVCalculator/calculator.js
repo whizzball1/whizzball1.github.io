@@ -84,8 +84,8 @@ var levelDict = {
   19: 5242880,
   20: 10485760,
 }
-tableLength = 1
-currentID = 1
+var tableLength = 1
+var currentID = 0
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
@@ -102,8 +102,8 @@ function tableAddDragon(type, level) {
   levelData.appendChild(document.createTextNode(level));
   var earning = dragonDict[type][level];
   earnData.appendChild(document.createTextNode(earning));
-  idData.appendChild(document.createTextNode(currentID));
   currentID++;
+  idData.appendChild(document.createTextNode(currentID));
   newRow.appendChild(nameData);
   newRow.appendChild(levelData);
   newRow.appendChild(earnData);
