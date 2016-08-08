@@ -96,7 +96,7 @@ function calculateCostEfficiency(currentLevel, dragonType, foodType) {
   var nextLevel = currentLevel++;
   var levelFoodCost = levelDict[nextLevel];
   var levelCost = levelFoodCost * foodDict[foodType];
-  var nextEarnRate = dragonDict[dragonType][nextLevel]
-  var timeToBreakEven = levelCost / nextEarnRate
+  var nextEarnRate = dragonDict[dragonType][nextLevel];
+  var timeToBreakEven = levelCost / nextEarnRate;
   return Math.round(timeToBreakEven)
 }
