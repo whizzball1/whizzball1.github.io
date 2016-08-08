@@ -136,15 +136,20 @@ function calculateCostEfficiency(currentLevel, dragonType, foodType) {
 function bestDragon(foodType) {
   var times = []
   var dragons = []
-  var dragonTimeDict = []
+  var ids = []
+  var idTimeDict = []
+  var dragonIdDict = []
   for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
     var dragonType = document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[0].innerHTML;
+    var dragonID = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[1].innerHTML);
     var currentLevel = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[2].innerHTML);
     times.push(calculateCostEfficiency(currentLevel, dragonType, foodType));
     dragons.push(dragonType);
+    ids.push[dragonID];
   }
   for (i = 0; i < dragons.length + 1; i++) {
-    dragonTimeDict[times[i]] = dragons[i]
+    dragonTimeDict[times[i]] = ids[i]
+    dragonIdDict[ids[i]] = dragons[i]
   }
   var bestTime = Math.min.apply(Math, times);
   return dragonTimeDict[bestTime];
