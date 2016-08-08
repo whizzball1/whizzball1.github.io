@@ -93,7 +93,7 @@ function addDragonButton() {
   tableAddDragon(dragonType, dragonLevel);
 }
 function calculateCostEfficiency(currentLevel, dragonType, foodType) {
-  var nextLevel = currentLevel++;
+  var nextLevel = currentLevel + 1;
   var levelFoodCost = levelDict[nextLevel];
   var levelCost = levelFoodCost * foodDict[foodType];
   var nextEarnRate = dragonDict[dragonType][nextLevel];
