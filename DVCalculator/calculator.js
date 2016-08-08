@@ -1,5 +1,5 @@
 var dragonDict = {
-  Plant: {
+  "Plant Dragon": {
     elements: ["plant"],
     1: 17,
     2: 27,
@@ -71,7 +71,7 @@ function tableAddDragon(type, level) {
   var nameData = document.createElement("td");
   var levelData = document.createElement("td");
   var earnData = document.createElement("td");
-  var dragonName = type + " Dragon";
+  var dragonName = type;
   nameData.appendChild(document.createTextNode(dragonName));
   levelData.appendChild(document.createTextNode(level));
   var earning = dragonDict[type][level];
@@ -90,7 +90,7 @@ function calculateEarning() {
 }
 function addDragonButton() {
   var eDragonType = document.getElementById("dragon_type");
-  var dragonType = eDragonType.options[eDragonType.selectedIndex].text;
+  var dragonType = eDragonType.options[eDragonType.selectedIndex].text + " Dragon";
   var eDragonLevel = document.getElementById("dragon_level");
   var dragonLevel = parseInt(eDragonLevel.options[eDragonLevel.selectedIndex].text);
   tableAddDragon(dragonType, dragonLevel);
@@ -103,4 +103,13 @@ function calculateCostEfficiency(currentLevel, dragonType, foodType) {
   var timeToBreakEven = levelCost / nextEarnRate;
   timeToBreakEven = Math.round(timeToBreakEven);
   return timeToBreakEven
+}
+function bestDragon(foodType) {
+  var times = []
+  for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
+    var dragonType = document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[0].innerHTML;
+    var currentLevel = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[1].innerHTML);
+    times.push(calculateCostEfficiency(currentLevel, dragonType, foodType));
+  }
+  return Math.min.apply(Math, times);
 }
