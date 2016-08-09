@@ -98,6 +98,8 @@ function tableAddDragon(type, level) {
   var earnData = document.createElement("td");
   var upgradeButton = document.createElement("td");
   var uButton = document.createElement("button");
+  var removeButton = document.createElement("td");
+  var rButton = document.creaetElement("button");
   var dragonName = type;
   nameData.appendChild(document.createTextNode(dragonName));
   levelData.appendChild(document.createTextNode(level));
@@ -110,11 +112,18 @@ function tableAddDragon(type, level) {
   uButton.setAttribute("onclick", upgradeFunction);
   uButton.innerHTML = "Upgrade";
   upgradeButton.appendChild(uButton);
+  rButton.setAttribute("type", "button");
+  rButton.setAttribute("class", "btn btn-danger");
+  var removeFunction = "removeDragon(" + currentID + ")";
+  rButton.setAttribute("onclick", removeFunction);
+  rButton.innerHTML = "Remove";
+  removeButton.appendChild(rButton);
   newRow.appendChild(nameData);
   newRow.appendChild(idData);
   newRow.appendChild(levelData);
   newRow.appendChild(earnData);
   newRow.appendChild(upgradeButton);
+  newRow.appendChild(removeButton);
   document.getElementById("dragon_table").childNodes[1].appendChild(newRow)
 }
 function calculateEarning() {
