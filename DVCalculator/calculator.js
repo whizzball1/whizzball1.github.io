@@ -99,7 +99,7 @@ function tableAddDragon(type, level) {
   var upgradeButton = document.createElement("td");
   var uButton = document.createElement("button");
   var removeButton = document.createElement("td");
-  var rButton = document.creaetElement("button");
+  var rButton = document.createElement("button");
   var dragonName = type;
   nameData.appendChild(document.createTextNode(dragonName));
   levelData.appendChild(document.createTextNode(level));
