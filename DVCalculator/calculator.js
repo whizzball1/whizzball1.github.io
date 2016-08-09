@@ -160,7 +160,7 @@ function bestDragon() {
     dragonIdDict[ids[i]] = dragons[i];
   }
   var bestTime = Math.min.apply(Math, times);
-  return idTimeDict[bestTime];
+  document.getElementById("dragon_id").innerHTML = idTimeDict[bestTime]
 }
 function upgradeDragon(id) {
   var htmlID = "dragon" + id;
