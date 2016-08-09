@@ -182,3 +182,8 @@ function upgradeDragon(id) {
   }
   document.getElementById("dragon_id").innerHTML = "N/A"
 }
+function removeDragon(id) {
+  var htmlID = "dragon" + id;
+  var currentDragon = document.getElementById(htmlID);
+  currentDragon.parentNode.removeChild(currentDragon);
+}
