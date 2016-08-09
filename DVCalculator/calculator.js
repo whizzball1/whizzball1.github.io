@@ -92,7 +92,6 @@ function tableAddDragon(type, level) {
   var newRow = document.createElement("tr");
   currentID++;
   newRow.id = "dragon" + currentID;
-  tableLength++;
   var nameData = document.createElement("td");
   var idData = document.createElement("td");
   var levelData = document.createElement("td");
