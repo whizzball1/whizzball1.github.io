@@ -145,7 +145,7 @@ function bestDragon(foodType) {
     var currentLevel = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[2].innerHTML);
     times.push(calculateCostEfficiency(currentLevel, dragonType, foodType));
     dragons.push(dragonType);
-    ids.push[dragonID];
+    ids.push(dragonID);
   }
   for (i = 0; i < dragons.length + 1; i++) {
     idTimeDict[times[i]] = ids[i];
