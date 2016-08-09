@@ -1,4 +1,4 @@
-  "x Dragon": {
+"x Dragon": {
     elements: [],
     1: 
     2: 
