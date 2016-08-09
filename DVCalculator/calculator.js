@@ -84,30 +84,38 @@ var levelDict = {
   19: 5242880,
   20: 10485760,
 }
-var tableLength = 1
 var currentID = 0
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
 function tableAddDragon(type, level) {
   var newRow = document.createElement("tr");
-  newRow.id = "dragon" + tableLength;
+  currentID++;
+  newRow.id = "dragon" + currentID;
   tableLength++;
   var nameData = document.createElement("td");
   var idData = document.createElement("td");
   var levelData = document.createElement("td");
   var earnData = document.createElement("td");
+  var upgradeButton = document.createElement("td");
+  var uButton = document.createElement("button");
   var dragonName = type;
   nameData.appendChild(document.createTextNode(dragonName));
   levelData.appendChild(document.createTextNode(level));
   var earning = dragonDict[type][level];
   earnData.appendChild(document.createTextNode(earning));
-  currentID++;
   idData.appendChild(document.createTextNode(currentID));
+  uButton.setAttribute("type", "button");
+  uButton.setAttribute("class", "btn btn-primary");
+  var upgradeFunction = "upgradeDragon(" + currentID + ")";
+  uButton.setAttribute("onclick", upgradeFunction);
+  uButton.innerHTML = "Upgrade";
+  upgradeButton.appendChild(uButton);
   newRow.appendChild(nameData);
   newRow.appendChild(idData);
   newRow.appendChild(levelData);
   newRow.appendChild(earnData);
+  newRow.appendChild(upgradeButton);
   document.getElementById("dragon_table").childNodes[1].appendChild(newRow)
 }
 function calculateEarning() {
