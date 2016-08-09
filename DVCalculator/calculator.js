@@ -152,5 +152,5 @@ function bestDragon(foodType) {
     dragonIdDict[ids[i]] = dragons[i];
   }
   var bestTime = Math.min.apply(Math, times);
-  return dragonIdDict[bestTime];
+  return idTimeDict[bestTime];
 }
