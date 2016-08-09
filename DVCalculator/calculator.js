@@ -161,3 +161,12 @@ function bestDragon(foodType) {
   var bestTime = Math.min.apply(Math, times);
   return idTimeDict[bestTime];
 }
+function upgradeDragon(id) {
+  var htmlID = "dragon" + id;
+  var currentDragon = document.getElementById(htmlID);
+  var dragonType = currentDragon.childNodes[0].innerHTML;
+  var dragonLevel = parseInt(currentDragon.childNodes[2].innerHTML) + 1;
+  if (dragonLevel < 21) {
+    currentDragon.childNodes[2].innerHTML = dragonLevel;
+    currentDragon.childNodes[3].innerHTML = dragonDict[dragonType][dragonLevel];
+}
