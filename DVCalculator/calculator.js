@@ -169,4 +169,5 @@ function upgradeDragon(id) {
   if (dragonLevel < 21) {
     currentDragon.childNodes[2].innerHTML = dragonLevel;
     currentDragon.childNodes[3].innerHTML = dragonDict[dragonType][dragonLevel];
+  }
 }
