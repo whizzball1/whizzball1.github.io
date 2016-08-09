@@ -1,4 +1,3 @@
-// Next task: add button for best dragon to upgrade and also dragon ids
 var dragonDict = {
   "Iron Dragon": {
     elements: ["earth", "metal"],
