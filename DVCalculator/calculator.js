@@ -143,8 +143,9 @@ function addGroup() {
   groupID++;
   table = document.getElementById("new_dragon_table");
   group = document.createElement("group");
-  table.appendChild(group)
+  table.appendChild(group);
   group.id = "group" + groupID;
+  group.setAttribute("class", "table");
   groupRow1 = document.createElement("tr");
   groupName = document.createElement("td");
   groupName.innerHTML = "Island " + groupID;
