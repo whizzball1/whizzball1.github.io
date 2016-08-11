@@ -142,18 +142,18 @@ function removeDragon(id) {
 function addGroup() {
   groupID++;
   table = document.getElementById("new_dragon_table");
-  group = document.createElement("group");
+  group = document.createElement("table");
   table.appendChild(group);
   group.id = "group" + groupID;
   group.setAttribute("class", "table");
-  groupBody = document.createElement("tbody");
+//  groupBody = document.createElement("tbody");
   groupRow1 = document.createElement("tr");
   groupName = document.createElement("td");
   groupName.innerHTML = "Island " + groupID;
   groupRow1.appendChild(groupName);
-  groupBody.appendChild(groupRow1);
+  group.appendChild(groupRow1);
   groupRow2 = document.createElement("tr");
-  groupBody.appendChild(groupRow2);
+  group.appendChild(groupRow2);
   groupDragon = document.createElement("td");
   groupDragon.appendChild(document.createElement("b"));
   groupDragon.childNodes[0].innerHTML = "Dragon";
