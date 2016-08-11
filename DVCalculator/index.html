@@ -23,7 +23,7 @@
 	<div id="new_dragon_table">
 	</div>
 	<div class="form-group row">
-		<div class="col-md-4"><button type="button" class="btn btn-primary" onclick="addDragonButton()">Add Dragon</button></div>
+		<div class="col-md-2" style="width: 12%"><button type="button" class="btn btn-primary" onclick="addDragonButton()">Add Dragon</button></div>
 		<div class="col-md-1" style="width: 12%;"><span style="display:inline-block;padding-top:6px;padding-left:12px">Dragon Type: </span></div>
 		<div class="col-md-3"><select class="form-control" id="dragon_type">
 			<option>Ash Dragon</option>
@@ -59,6 +59,10 @@
 			<option>18</option>
 			<option>19</option>
 			<option>20</option>
+		</select></div>
+		<div class="col-md-1" style="width: 12%"><span style="display:inline-block;padding-top:6px;padding-left:6px">Island Group: </span></div>
+		<div class="col-md-1"><select class="form-control" id="dragon_group">
+			<option>Group 1</option>
 		</select></div>
 	</div>
 	<p><button type="button" class="btn btn-primary" onclick="calculateEarning()">Calculate Earnings</button><span id="total_earnings"> Total Coins/Minute: 0</span></p>
