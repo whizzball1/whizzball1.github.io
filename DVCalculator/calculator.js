@@ -82,9 +82,16 @@ function tableAddDragon(type, level, group) {
 }
 function calculateEarning() {
   number = 0
-  for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
-    number += parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[3].innerHTML)
+  var groupsLength = groups.length;
+  for (i = 0; i < groupsLength; i++) {
+    var currentGroup = groups[i];
+    for (i = 2; i < currentGroup.childNodes[0].length; i++) {
+      number += parseInt(currentGroup.childNodes[0].childNodes[i].childNodes[3].innerHTML);
+    }
   }
+//  for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
+//    number += parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[3].innerHTML)
+//  }
   document.getElementById("total_earnings").innerHTML = " Total Coins/Minute: " + number
 }
 function addDragonButton() {
