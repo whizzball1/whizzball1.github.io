@@ -215,3 +215,4 @@ function addDragonOptions() {
     select.appendChild(newOption);
   }
 }
+addDragonOptions();
