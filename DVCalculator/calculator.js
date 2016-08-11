@@ -37,6 +37,7 @@ var levelDict = {
 }
 var currentID = 0
 var groupID = 0
+var groups = []
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
@@ -144,6 +145,7 @@ function removeDragon(id) {
 }
 function addGroup() {
   groupID++;
+  groups.push("group" + groupID);
   table = document.getElementById("new_dragon_table");
   group = document.createElement("table");
   table.appendChild(group);
