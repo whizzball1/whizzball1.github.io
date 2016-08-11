@@ -118,13 +118,16 @@ function bestDragon() {
   var idTimeDict = [];
   var dragonIdDict = [];
   var foodType = document.getElementById("food_type").options[document.getElementById("food_type").selectedIndex].text;
-  for (i = 2; i < document.getElementById("dragon_table").childNodes[1].childNodes.length; i++) {
-    var dragonType = document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[0].innerHTML;
-    var dragonID = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[1].innerHTML);
-    var currentLevel = parseInt(document.getElementById("dragon_table").childNodes[1].childNodes[i].childNodes[2].innerHTML);
-    times.push(calculateCostEfficiency(currentLevel, dragonType, foodType));
-    dragons.push(dragonType);
-    ids.push(dragonID);
+  for (i in groups) {
+    var currentGroup = document.getElementById(groups[i]);
+    for (i = 2; i < currentGroup.childNodes[0].childNodes.length; i++) {
+      var dragonType = currentGroup.childNodes[0].childNodes[i].childNodes[0].innerHTML;
+      var dragonID = parseInt(currentGroup.childNodes[0].childNodes[i].childNodes[1].innerHTML);
+      var currentLevel = parseInt(currentGroup.childNodes[0].childNodes[i].childNodes[2].innerHTML);
+      times.push(calculateCostEfficiency(currentLevel, dragonType, foodType));
+      dragons.push(dragonType);
+      ids.push(dragonID);
+    }
   }
   for (i = 0; i < dragons.length + 1; i++) {
     idTimeDict[times[i]] = ids[i];
