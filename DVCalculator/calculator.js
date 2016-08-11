@@ -84,7 +84,7 @@ function calculateEarning() {
   number = 0
   var groupsLength = groups.length;
   for (i = 0; i < groupsLength; i++) {
-    var currentGroup = groups[i];
+    var currentGroup = documents.getElementById(groups[i]);
     for (i = 2; i < currentGroup.childNodes[0].childNodes.length; i++) {
       number += parseInt(currentGroup.childNodes[0].childNodes[i].childNodes[3].innerHTML);
     }
