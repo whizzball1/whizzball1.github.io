@@ -147,6 +147,7 @@ function addGroup() {
   group.id = "group" + groupID;
   group.setAttribute("class", "table");
   groupBody = document.createElement("tbody");
+  group.appendChild(groupBody);
   groupRow1 = document.createElement("tr");
   groupName = document.createElement("td");
   groupName.innerHTML = "Island " + groupID;
