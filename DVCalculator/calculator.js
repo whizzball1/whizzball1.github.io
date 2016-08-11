@@ -82,8 +82,7 @@ function tableAddDragon(type, level, group) {
 }
 function calculateEarning() {
   number = 0
-  var groupsLength = groups.length;
-  for (i = 0; i < groupsLength; i++) {
+  for (i in groups) {
     var currentGroup = document.getElementById(groups[i]);
     for (i = 2; i < currentGroup.childNodes[0].childNodes.length; i++) {
       number += parseInt(currentGroup.childNodes[0].childNodes[i].childNodes[3].innerHTML);
