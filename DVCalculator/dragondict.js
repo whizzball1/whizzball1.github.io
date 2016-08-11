@@ -1091,7 +1091,7 @@ var dragonDict = {
     20: 83
   },
   "Miasma Dragon": {
-    elements: ["dark, "air"],
+    elements: ["dark", "air"],
     1: 5,
     2: 8,
     3: 12,
