@@ -150,7 +150,9 @@ function addGroup() {
   group.appendChild(groupBody);
   groupRow1 = document.createElement("tr");
   groupName = document.createElement("td");
-  groupName.innerHTML = "Island " + groupID;
+  groupHR = document.createElement("h2");
+  groupName.appendChild(groupHR);
+  groupHR.innerHTML = "Island " + groupID;
   groupRow1.appendChild(groupName);
   groupBody.appendChild(groupRow1);
   groupRow2 = document.createElement("tr");
