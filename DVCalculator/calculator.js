@@ -36,6 +36,7 @@ var levelDict = {
   20: 10485760,
 }
 var currentID = 0
+var groupID = 0
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
@@ -137,4 +138,47 @@ function removeDragon(id) {
   var htmlID = "dragon" + id;
   var currentDragon = document.getElementById(htmlID);
   currentDragon.parentNode.removeChild(currentDragon);
+}
+function addGroup() {
+  groupID++;
+  table = document.getElementById("new_dragon_table");
+  group = document.createElement("group");
+  table.appendChild(group)
+  group.id = "group" + groupID;
+  groupRow1 = document.createElement("tr");
+  groupName = document.createElement("td");
+  groupName.innerHTML = "Island " + groupID;
+  groupRow1.appendChild(groupName);
+  group.appendChild(groupRow1);
+  groupRow2 = document.createElement("tr");
+  group.appendChild(groupRow2);
+  groupDragon = document.createElement("td");
+  groupDragon.appendChild(document.createElement("b"));
+  groupDragon.childNodes[0].innerHTML = "Dragon";
+  groupRow2.appendChild(groupDragon);
+  
+  groupId = document.createElement("td");
+  groupId.appendChild(document.createElement("b"));
+  groupId.childNodes[0].innerHTML = "ID";
+  groupRow2.appendChild(groupId);
+  
+  groupLevel = document.createElement("td");
+  groupLevel.appendChild(document.createElement("b"));
+  groupLevel.childNodes[0].innerHTML = "Level";
+  groupRow2.appendChild(groupLevel);
+  
+  groupCPM = document.createElement("td");
+  groupCPM.appendChild(document.createElement("b"));
+  groupCPM.childNodes[0].innerHTML = "Coins per Minute";
+  groupRow2.appendChild(groupCPM);
+  
+  groupUpgrade = document.createElement("td");
+  groupUpgrade.appendChild(document.createElement("b"));
+  groupUpgrade.childNodes[0].innerHTML = "Upgrade";
+  groupRow2.appendChild(groupUpgrade);
+  
+  groupRemove = document.createElement("td");
+  groupRemove.appendChild(document.createElement("b"));
+  groupRemove.childNodes[0].innerHTML = "Remove";
+  groupRow2.appendChild(groupRemove);
 }
