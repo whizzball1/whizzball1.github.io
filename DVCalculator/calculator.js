@@ -36,7 +36,7 @@ var levelDict = {
   20: 10485760,
 }
 var currentID = 0
-var groupID = 0
+var groupID = 1
 var groups = []
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
