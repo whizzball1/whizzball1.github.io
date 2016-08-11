@@ -207,3 +207,11 @@ function addGroup() {
   select.appendChild(option);
 }
 addGroup();
+function addDragonOptions() {
+  var select = document.getElementById("dragon_type");
+  for (i in dragonDict) {
+    newOption = document.createElement("option");
+    newOption.innerHTML = i;
+    select.appendChild(newOption);
+  }
+}
