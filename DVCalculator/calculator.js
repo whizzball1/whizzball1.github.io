@@ -77,7 +77,7 @@ function tableAddDragon(type, level, group) {
   newRow.appendChild(upgradeButton);
   newRow.appendChild(removeButton);
   var islandGroup = "group" + group;
-  document.getElementById(islandGroup).childNodes[1].appendChild(newRow)
+  document.getElementById(islandGroup).childNodes[0].appendChild(newRow)
 }
 function calculateEarning() {
   number = 0
