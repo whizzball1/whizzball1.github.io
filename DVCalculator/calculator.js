@@ -200,4 +200,9 @@ function addGroup() {
   groupRemove.appendChild(document.createElement("b"));
   groupRemove.childNodes[0].innerHTML = "Remove";
   groupRow2.appendChild(groupRemove);
+  
+  var select = document.getElementById("dragon_group");
+  var option = document.createElement("option");
+  option.innerHTML = groupID;
+  select.appendChild(option);
 }
