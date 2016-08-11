@@ -40,7 +40,7 @@ var groupID = 0
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
-function tableAddDragon(type, level) {
+function tableAddDragon(type, level, group) {
   var newRow = document.createElement("tr");
   currentID++;
   newRow.id = "dragon" + currentID;
@@ -76,7 +76,8 @@ function tableAddDragon(type, level) {
   newRow.appendChild(earnData);
   newRow.appendChild(upgradeButton);
   newRow.appendChild(removeButton);
-  document.getElementById("dragon_table").childNodes[1].appendChild(newRow)
+  var islandGroup = "group" + group;
+  document.getElementById(islandGroup).childNodes[1].appendChild(newRow)
 }
 function calculateEarning() {
   number = 0
@@ -90,7 +91,9 @@ function addDragonButton() {
   var dragonType = eDragonType.options[eDragonType.selectedIndex].text;
   var eDragonLevel = document.getElementById("dragon_level");
   var dragonLevel = parseInt(eDragonLevel.options[eDragonLevel.selectedIndex].text);
-  tableAddDragon(dragonType, dragonLevel);
+  var eDragonGroup = document.getElementById("dragon_group");
+  var dragonGroup = parseInt(eDragonGroup.options[eDragonGroup.selectedIndex].text);
+  tableAddDragon(dragonType, dragonLevel, dragonGroup);
 }
 function calculateCostEfficiency(currentLevel, dragonType, foodType) {
   var nextLevel = currentLevel + 1;
