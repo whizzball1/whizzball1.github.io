@@ -146,14 +146,14 @@ function addGroup() {
   table.appendChild(group);
   group.id = "group" + groupID;
   group.setAttribute("class", "table");
-//  groupBody = document.createElement("tbody");
+  groupBody = document.createElement("tbody");
   groupRow1 = document.createElement("tr");
   groupName = document.createElement("td");
   groupName.innerHTML = "Island " + groupID;
   groupRow1.appendChild(groupName);
-  group.appendChild(groupRow1);
+  groupBody.appendChild(groupRow1);
   groupRow2 = document.createElement("tr");
-  group.appendChild(groupRow2);
+  groupBody.appendChild(groupRow2);
   groupDragon = document.createElement("td");
   groupDragon.appendChild(document.createElement("b"));
   groupDragon.childNodes[0].innerHTML = "Dragon";
