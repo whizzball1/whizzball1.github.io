@@ -2679,7 +2679,7 @@ var dragonDict = {
     20: 775
   },
   "Leathery Dragon": {
-    elements: [lighthing, earth, fire, cold],
+    elements: [lightning, earth, fire, cold],
     1: 18,
     2: 28,
     3: 39,
