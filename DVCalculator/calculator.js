@@ -259,7 +259,7 @@ function addBoost() {
     for (i = 0; i < dragonElements.length; i++) {
       dragonElement = dragonElements[i]
       if (dragonElement == boostType.toLowerCase()) {
-        eCurrentDragon.childNodes[3].innerHTML = math.Round(parseInt(eCurrentDragon.childNodes[3].innerHTML) * 1.2);
+        eCurrentDragon.childNodes[3].innerHTML = Math.round(parseInt(eCurrentDragon.childNodes[3].innerHTML) * 1.2);
       }
     }
   }
