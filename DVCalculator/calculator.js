@@ -65,7 +65,7 @@ function tableAddDragon(type, level, group) {
     var currentI = elements[i];
     for (j = 0; j < islandBoosts.length; j++) {
       if (currentI == islandBoosts[j]) {
-        earning = earning * 1.2;
+        earning = Math.round(earning * 1.2);
       }
     }
   }
