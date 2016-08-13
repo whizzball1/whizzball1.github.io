@@ -59,7 +59,7 @@ function tableAddDragon(type, level, group) {
   levelData.appendChild(document.createTextNode(level));
   
   var earning = dragonDict[type][level];
-  var elements = dragonDict[type][element];
+  var elements = dragonDict[type]["elements"];
   var islandBoosts = checkIslandBoost(group);
   for (i = 0; i < elements.length; i++) {
     var currentI = elements[i];
