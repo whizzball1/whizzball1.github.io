@@ -242,4 +242,5 @@ function addBoost() {
     }, 1000)
     return;
   }
+  eBoostRow.childNodes[3].innerHTML = islandGroup;
 }
