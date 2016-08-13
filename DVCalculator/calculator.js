@@ -231,7 +231,7 @@ function addBoost() {
   var eBoostType = document.getElementById("boost_type")
   var boostType = eBoostType.options[eBoostType.selectedIndex].text;
   var eIslandGroup = document.getElementById("dragon_group_2");
-  var islandGroup = eIslandGroup.options[eIslandGroup.selectedIndex].text;
+  var islandGroup = parseInt(eIslandGroup.options[eIslandGroup.selectedIndex].text);
   var boostRow = boostType.toLowerCase() + "_row";
   var eBoostRow = document.getElementById(boostRow);
   
