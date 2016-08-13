@@ -53,11 +53,24 @@ function tableAddDragon(type, level, group) {
   var uButton = document.createElement("button");
   var removeButton = document.createElement("td");
   var rButton = document.createElement("button");
+  
   var dragonName = type;
   nameData.appendChild(document.createTextNode(dragonName));
   levelData.appendChild(document.createTextNode(level));
+  
   var earning = dragonDict[type][level];
+  var elements = dragonDict[type][element];
+  var islandBoosts = checkIslandBoost(group);
+  for (i = 0; i < elements.length; i++) {
+    var currentI = elements[i];
+    for (j = 0; j < islandBoosts.length; j++) {
+      if (currentI == islandBoosts[j]) {
+        earning = earning * 1.2;
+      }
+    }
+  }
   earnData.appendChild(document.createTextNode(earning));
+  
   idData.appendChild(document.createTextNode(currentID));
   uButton.setAttribute("type", "button");
   uButton.setAttribute("class", "btn btn-primary");
