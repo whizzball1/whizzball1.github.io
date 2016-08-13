@@ -243,4 +243,21 @@ function addBoost() {
     return;
   }
   eBoostRow.childNodes[3].innerHTML = islandGroup;
+  
+  var islandId = "group" + islandGroup;
+  var islandTable = document.getElementById(islandId).childNodes[0]
+  var islandArray = []
+  for (i = 2; i < islandTable.childNodes.length; i++) {
+    islandArray.push(parseInt(islandTable.childNodes[i].childNodes[1].innerHTML))
+  }
+  for (i in islandArray) {
+    var currentDragon = "dragon" + i;
+    var dragonType = document.getElementById(currentDragon).childNodes[0].innerHTML;
+    var dragonElements = dragonDict[dragonType]["elements"];
+    for (i in dragonElements) {
+      if (i == boostType.toLowerCase()) {
+        currentDragon.childNodes[3].innerHTML = math.Round(parseInt(currentDragon.childNodes[3].innerHTML) * 1.2);
+      }
+    }
+  }
 }
