@@ -226,3 +226,20 @@ function addDragonOptions() {
   }
 }
 addDragonOptions();
+
+function addBoost() {
+  var eBoostType = document.getElementById("boost_type")
+  var boostType = eBoostType.options[eBoostType.selectedIndex].text;
+  var eIslandGroup = document.getElementById("dragon_group_2");
+  var islandGroup = eIslandGroup.options[eIslandGroup.selectedIndex].text;
+  var boostRow = boostType.toLowerCase() + "_row";
+  var eBoostRow = document.getElementById(boostRow);
+  
+  if (eBoostRow.childNodes[3].innerHTML != "Not Assigned") {
+    document.getElementById("add_boost").innerHTML = "Already Added";
+    setTimeout(function() {
+      document.getElementById("add_boost").innerHTML = "Add Boost";
+    }, 1000)
+    return;
+  }
+}
