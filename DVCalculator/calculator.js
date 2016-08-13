@@ -205,6 +205,11 @@ function addGroup() {
   var option = document.createElement("option");
   option.innerHTML = groupID;
   select.appendChild(option);
+  
+  select = document.getElementById("dragon_group_2");
+  var option = document.createElement("option");
+  option.innerHTML = groupID;
+  select.appendChild(option);
 }
 addGroup();
 function addDragonOptions() {
