@@ -307,7 +307,8 @@ function calculateBoostedEarnings(island) {
       dragonElement = dragonElements[i]
       for (j = 0; j < islandBoosts.length; j++) {
         if (dragonElement == islandBoosts[j]) {
-          eCurrentDragon.childNodes[3].innerHTML = Math.round(parseInt(eCurrentDragon.childNodes[3].innerHTML) * 1.2);
+          var currentEarning = parseInt(eCurrentDragon.childNodes[3].innerHTML);
+          eCurrentDragon.childNodes[3].innerHTML = Math.round(currentEarning * 1.2);
         }
       }
     }
