@@ -253,11 +253,13 @@ function addBoost() {
   for (i = 0; i < islandArray.length; i++) {
     currentI = islandArray[i];
     var currentDragon = "dragon" + currentI;
+    var eCurrentDragon = document.getElementById(currentDragon);
     var dragonType = document.getElementById(currentDragon).childNodes[0].innerHTML;
     var dragonElements = dragonDict[dragonType]["elements"];
-    for (i in dragonElements) {
-      if (i == boostType.toLowerCase()) {
-        currentDragon.childNodes[3].innerHTML = math.Round(parseInt(currentDragon.childNodes[3].innerHTML) * 1.2);
+    for (i = 0; i < dragonElements.length; i++) {
+      dragonElement = dragonElements[i]
+      if (dragonElement == boostType.toLowerCase()) {
+        eCurrentDragon.childNodes[3].innerHTML = math.Round(parseInt(eCurrentDragon.childNodes[3].innerHTML) * 1.2);
       }
     }
   }
