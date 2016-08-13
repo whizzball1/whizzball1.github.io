@@ -300,7 +300,7 @@ function calculateBoostedEarnings(island) {
     var currentDragon = "dragon" + currentI;
     var eCurrentDragon = document.getElementById(currentDragon);
     var dragonType = eCurrentDragon.childNodes[0].innerHTML;
-    var dragonLevel = parseInt(eCurrentDragon.childNodes[2]);
+    var dragonLevel = parseInt(eCurrentDragon.childNodes[2].innerHTML);
     var dragonElements = dragonDict[dragonType]["elements"];
     eCurrentDragon.childNodes[3].innerHTML = dragonDict[dragonType][dragonLevel];
     for (i = 0; i < dragonElements.length; i++) {
