@@ -250,8 +250,9 @@ function addBoost() {
   for (i = 2; i < islandTable.childNodes.length; i++) {
     islandArray.push(parseInt(islandTable.childNodes[i].childNodes[1].innerHTML))
   }
-  for (i in islandArray) {
-    var currentDragon = "dragon" + i;
+  for (i = 0; i < islandArray.length; i++) {
+    currentI = islandArray[i];
+    var currentDragon = "dragon" + currentI;
     var dragonType = document.getElementById(currentDragon).childNodes[0].innerHTML;
     var dragonElements = dragonDict[dragonType]["elements"];
     for (i in dragonElements) {
