@@ -256,6 +256,16 @@ function addBoost() {
     return;
   }
   eBoostRow.childNodes[3].innerHTML = islandGroup;
+  calculateBoostedEarnings(islandGroup);
+}
+function moveBoost() {
+  var eBoostType = document.getElementById("boost_type_2")
+  var boostType = eBoostType.options[eBoostType.selectedIndex].text;
+  var eIslandGroup = document.getElementById("dragon_group_3");
+  var islandGroup = parseInt(eIslandGroup.options[eIslandGroup.selectedIndex].text);
+  var boostRow = boostType.toLowerCase() + "_row";
+  var eBoostRow = document.getElementById(boostRow);
+  eBoostRow.childNodes[3].innerHTML = islandGroup;
   
   var islandId = "group" + islandGroup;
   var islandTable = document.getElementById(islandId).childNodes[0]
@@ -273,6 +283,32 @@ function addBoost() {
       dragonElement = dragonElements[i]
       if (dragonElement == boostType.toLowerCase()) {
         eCurrentDragon.childNodes[3].innerHTML = Math.round(parseInt(eCurrentDragon.childNodes[3].innerHTML) * 1.2);
+      }
+    }
+  }
+}
+function calculateBoostedEarnings(island) {
+  var islandId = "group" + island;
+  var islandTable = document.getElementById(islandId).childNodes[0]
+  var islandArray = []
+  var islandBoosts = checkIslandBoost(island);
+  for (i = 2; i < islandTable.childNodes.length; i++) {
+    islandArray.push(parseInt(islandTable.childNodes[i].childNodes[1].innerHTML))
+  }
+  for (i = 0; i < islandArray.length; i++) {
+    currentI = islandArray[i];
+    var currentDragon = "dragon" + currentI;
+    var eCurrentDragon = document.getElementById(currentDragon);
+    var dragonType = eCurrentDragon.childNodes[0].innerHTML;
+    var dragonLevel = parseInt(eCurrentDragon.childNodes[2]);
+    var dragonElements = dragonDict[dragonType]["elements"];
+    eCurrentDragon.childNodes[3].innerHTML = dragonDict[dragonType][dragonLevel];
+    for (i = 0; i < dragonElements.length; i++) {
+      dragonElement = dragonElements[i]
+      for (j = 0; j < islandBoosts.length; j++) {
+        if (dragonElement == islandBoosts[j]) {
+          eCurrentDragon.childNodes[3].innerHTML = Math.round(parseInt(eCurrentDragon.childNodes[3].innerHTML) * 1.2);
+        }
       }
     }
   }
