@@ -266,26 +266,7 @@ function moveBoost() {
   var boostRow = boostType.toLowerCase() + "_row";
   var eBoostRow = document.getElementById(boostRow);
   eBoostRow.childNodes[3].innerHTML = islandGroup;
-  
-  var islandId = "group" + islandGroup;
-  var islandTable = document.getElementById(islandId).childNodes[0]
-  var islandArray = []
-  for (i = 2; i < islandTable.childNodes.length; i++) {
-    islandArray.push(parseInt(islandTable.childNodes[i].childNodes[1].innerHTML))
-  }
-  for (i = 0; i < islandArray.length; i++) {
-    currentI = islandArray[i];
-    var currentDragon = "dragon" + currentI;
-    var eCurrentDragon = document.getElementById(currentDragon);
-    var dragonType = document.getElementById(currentDragon).childNodes[0].innerHTML;
-    var dragonElements = dragonDict[dragonType]["elements"];
-    for (i = 0; i < dragonElements.length; i++) {
-      dragonElement = dragonElements[i]
-      if (dragonElement == boostType.toLowerCase()) {
-        eCurrentDragon.childNodes[3].innerHTML = Math.round(parseInt(eCurrentDragon.childNodes[3].innerHTML) * 1.2);
-      }
-    }
-  }
+  calculateBoostedEarnings(islandGroup);
 }
 function calculateBoostedEarnings(island) {
   var islandId = "group" + island;
