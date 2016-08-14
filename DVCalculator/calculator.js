@@ -349,7 +349,7 @@ function checkBoostedEarning(dragonID, level) {
     for (j = 0; j < islandBoosts.length; j++) {
       currentBoost = islandBoosts[j];
       if (currentElement == currentBoost) {
-        boostedEarning = baseEarning * 1.2;
+        boostedEarning = Math.round(baseEarning * 1.2);
       }
     }
   }
