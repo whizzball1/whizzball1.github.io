@@ -38,6 +38,7 @@ var levelDict = {
 var currentID = 0
 var groupID = 0
 var groups = []
+var groupIDs = []
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
@@ -168,6 +169,7 @@ function removeDragon(id) {
 function addGroup() {
   groupID++;
   groups.push("group" + groupID);
+  groupIDs.push(groupID);
   table = document.getElementById("new_dragon_table");
   group = document.createElement("table");
   table.appendChild(group);
@@ -256,7 +258,7 @@ function addBoost() {
     return;
   }
   eBoostRow.childNodes[3].innerHTML = islandGroup;
-  calculateBoostedEarnings(islandGroup);
+  calculateBoostedEarnings();
 }
 function moveBoost() {
   var eBoostType = document.getElementById("boost_type_2")
@@ -266,9 +268,11 @@ function moveBoost() {
   var boostRow = boostType.toLowerCase() + "_row";
   var eBoostRow = document.getElementById(boostRow);
   eBoostRow.childNodes[3].innerHTML = islandGroup;
-  calculateBoostedEarnings(islandGroup);
+  calculateBoostedEarnings();
 }
-function calculateBoostedEarnings(island) {
+function calculateBoostedEarnings() {
+  for (f = 0; f < groupIDs.length; f++) {
+  var island = groupIDs[f];
   var islandId = "group" + island;
   var islandTable = document.getElementById(islandId).childNodes[0]
   var islandArray = []
@@ -293,6 +297,7 @@ function calculateBoostedEarnings(island) {
         }
       }
     }
+  }
   }
 }
 function checkIslandBoost(island) {
