@@ -116,11 +116,11 @@ function addDragonButton() {
   var dragonGroup = parseInt(eDragonGroup.options[eDragonGroup.selectedIndex].text);
   tableAddDragon(dragonType, dragonLevel, dragonGroup);
 }
-function calculateCostEfficiency(currentLevel, dragonType, foodType) {
+function calculateCostEfficiency(currentLevel, dragonID, foodType) {
   var nextLevel = currentLevel + 1;
   var levelFoodCost = levelDict[nextLevel];
   var levelCost = levelFoodCost * foodDict[foodType]
-  var nextEarnRate = dragonDict[dragonType][nextLevel];
+  var nextEarnRate = checkBoostedEarning(dragonID, nextLevel);
   var timeToBreakEven = levelCost / nextEarnRate;
   timeToBreakEven = Math.round(timeToBreakEven);
   return timeToBreakEven
@@ -138,7 +138,7 @@ function bestDragon() {
       var dragonType = currentGroup.childNodes[0].childNodes[i].childNodes[0].innerHTML;
       var dragonID = parseInt(currentGroup.childNodes[0].childNodes[i].childNodes[1].innerHTML);
       var currentLevel = parseInt(currentGroup.childNodes[0].childNodes[i].childNodes[2].innerHTML);
-      times.push(calculateCostEfficiency(currentLevel, dragonType, foodType));
+      times.push(calculateCostEfficiency(currentLevel, dragonID, foodType));
       dragons.push(dragonType);
       ids.push(dragonID);
     }
