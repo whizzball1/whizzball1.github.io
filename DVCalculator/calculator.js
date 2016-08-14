@@ -297,34 +297,34 @@ function calculateBoostedEarnings(island) {
 }
 function checkIslandBoost(island) {
   boostsOnIsland = []
-  if (island = parseInt(document.getElementById("plant_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("plant_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("plant");
   }
-  if (island = parseInt(document.getElementById("fire_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("fire_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("fire");
   }
-  if (island = parseInt(document.getElementById("lightning_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("lightning_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("lightning");
   }
-  if (island = parseInt(document.getElementById("air_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("air_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("air");
   }
-  if (island = parseInt(document.getElementById("metal_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("metal_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("metal");
   }
-  if (island = parseInt(document.getElementById("cold_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("cold_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("cold");
   }
-  if (island = parseInt(document.getElementById("water_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("water_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("water");
   }
-  if (island = parseInt(document.getElementById("earth_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("earth_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("earth");
   }
-  if (island = parseInt(document.getElementById("dark_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("dark_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("dark");
   }
-  if (island = parseInt(document.getElementById("light_row").childNodes[3].innerHTML)) {
+  if (island == parseInt(document.getElementById("light_row").childNodes[3].innerHTML)) {
     boostsOnIsland.push("light");
   }
   return boostsOnIsland;
