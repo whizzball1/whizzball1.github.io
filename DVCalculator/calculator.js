@@ -335,3 +335,23 @@ function checkIslandBoost(island) {
   }
   return boostsOnIsland;
 }
+function checkBoostedEarning(dragonID, level) {
+  var eDragon = document.getElementById("dragon" + dragonID);
+  var dragonType = eDragon.childNodes[0].innerHTML;
+  var dragonElements = dragonDict[dragonType]["elements"];
+  var baseEarning = dragonDict[dragonType][level];
+  var boostedEarning = baseEarning
+  var islandID = eDragon.parentNode.parentNode.id;
+  var islandNumber = parseInt(islandID.replace(/[group]/g, ""));
+  var islandBoosts = checkIslandBoost(islandNumber);
+  for (i = 0; i < dragonElements.length; i++) {
+    currentElement = dragonElements[i];
+    for (j = 0; j < islandBoosts.length; j++) {
+      currentBoost = islandBoosts[j];
+      if (currentElement == currentBoost) {
+        boostedEarning = baseEarning * 1.2;
+      }
+    }
+  }
+  return boostedEarning;
+}
