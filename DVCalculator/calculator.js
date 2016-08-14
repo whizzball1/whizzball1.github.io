@@ -160,6 +160,7 @@ function upgradeDragon(id) {
     currentDragon.childNodes[3].innerHTML = dragonDict[dragonType][dragonLevel];
   }
   document.getElementById("dragon_id").innerHTML = "N/A"
+  calculateBoostedEarnings();
 }
 function removeDragon(id) {
   var htmlID = "dragon" + id;
