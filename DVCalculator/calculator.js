@@ -389,3 +389,6 @@ function save() {
   }
   localStorage.setItem('save', JSON.stringify(save));
 }
+function load() {
+  save = JSON.parse(localStorage.getItem('save'))
+}
