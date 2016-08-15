@@ -371,7 +371,7 @@ function save() {
   for (i = 0; i < groups.length; i++) {
     currentGroup = groups[i];
     save[currentGroup] = {}
-    eCurrentGroup = document.getElementById[currentGroup]
+    eCurrentGroup = document.getElementById(currentGroup)
     currentDragons = []
     eCurrentDragons = eCurrentGroup.childNodes[0].childNodes;
     dragonArray = []
