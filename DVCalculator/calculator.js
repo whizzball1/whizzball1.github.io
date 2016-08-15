@@ -369,6 +369,7 @@ function save() {
   save["boosts"]["light"] = document.getElementById("light_row").childNodes[3].innerHTML
   save["boosts"]["dark"] = document.getElementById("dark_row").childNodes[3].innerHTML
   
+  save["grouplist"] = groups
   save["groups"] = {}
   for (i = 0; i < groups.length; i++) {
     currentGroup = groups[i];
@@ -402,5 +403,7 @@ function load() {
   document.getElementById("dark_row").childNodes[3].innerHTML = save["boosts"]["dark"];
   document.getElementById("light_row").childNodes[3].innerHTML = save["boosts"]["light"];
   
-  
+  for (i = 0; i < save["grouplist"].length; i++) {
+    console.log(save["grouplist"][i])
+  }
 }
