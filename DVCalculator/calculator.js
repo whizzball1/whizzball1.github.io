@@ -355,3 +355,18 @@ function checkBoostedEarning(dragonID, level) {
   }
   return boostedEarning;
 }
+function save() {
+  var save = {}
+  save["boosts"] = {}
+  save["boosts"]["plant"] = document.getElementById("plant_row").childNodes[1].innerHTML
+  save["boosts"]["fire"] = document.getElementById("fire_row").childNodes[1].innerHTML
+  save["boosts"]["lightning"] = document.getElementById("lightning_row").childNodes[1].innerHTML
+  save["boosts"]["air"] = document.getElementById("air_row").childNodes[1].innerHTML
+  save["boosts"]["metal"] = document.getElementById("metal_row").childNodes[1].innerHTML
+  save["boosts"]["cold"] = document.getElementById("cold_row").childNodes[1].innerHTML
+  save["boosts"]["water"] = document.getElementById("water_row").childNodes[1].innerHTML
+  save["boosts"]["earth"] = document.getElementById("earth_row").childNodes[1].innerHTML
+  save["boosts"]["light"] = document.getElementById("light_row").childNodes[1].innerHTML
+  save["boosts"]["dark"] = document.getElementById("dark_row").childNodes[1].innerHTML
+  localStorage.setItem('save', save);
+}
