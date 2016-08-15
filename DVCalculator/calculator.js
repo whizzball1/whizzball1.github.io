@@ -391,4 +391,5 @@ function save() {
 }
 function load() {
   save = JSON.parse(localStorage.getItem('save'))
+  document.getElementById("plant_row").childNodes[3].innerHTML = save["boosts"]["plant"];
 }
