@@ -368,6 +368,8 @@ function save() {
   save["boosts"]["earth"] = document.getElementById("earth_row").childNodes[3].innerHTML
   save["boosts"]["light"] = document.getElementById("light_row").childNodes[3].innerHTML
   save["boosts"]["dark"] = document.getElementById("dark_row").childNodes[3].innerHTML
+  
+  save["groups"] = {}
   for (i = 0; i < groups.length; i++) {
     currentGroup = groups[i];
     save["groups"][currentGroup] = {}
