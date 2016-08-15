@@ -378,7 +378,7 @@ function save() {
     for (j = 2; j < eCurrentDragons.length; j++) {
       dragonRow = eCurrentDragons[j];
       dragonId = dragonRow.id;
-      dragonArray.push[dragonId];
+      dragonArray.push(dragonId);
     }
   }
   localStorage.setItem('save', JSON.stringify(save));
