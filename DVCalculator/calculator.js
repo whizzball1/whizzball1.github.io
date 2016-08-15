@@ -370,7 +370,7 @@ function save() {
   save["boosts"]["dark"] = document.getElementById("dark_row").childNodes[3].innerHTML
   for (i = 0; i < groups.length; i++) {
     currentGroup = groups[i];
-    save[currentGroup] = {}
+    save["groups"][currentGroup] = {}
     eCurrentGroup = document.getElementById(currentGroup)
     currentDragons = []
     eCurrentDragons = eCurrentGroup.childNodes[0].childNodes;
@@ -379,7 +379,11 @@ function save() {
       dragonRow = eCurrentDragons[j];
       dragonId = dragonRow.id;
       dragonArray.push(dragonId);
+      save["groups"][currentGroup][dragonId] = {}
+      save["groups"][currentGroup][dragonId]["type"] = dragonRow.childNodes[0].innerHTML
+      save["groups"][currentGroup][dragonId]["level"] = dragonRow.childNodes[2].innerHTML
     }
+    save[groups][currentGroup]["dragons"] = dragonArray;
   }
   localStorage.setItem('save', JSON.stringify(save));
 }
