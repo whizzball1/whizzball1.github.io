@@ -385,7 +385,7 @@ function save() {
       save["groups"][currentGroup][dragonId]["type"] = dragonRow.childNodes[0].innerHTML
       save["groups"][currentGroup][dragonId]["level"] = dragonRow.childNodes[2].innerHTML
     }
-    save[groups][currentGroup]["dragons"] = dragonArray;
+    save["groups"][currentGroup]["dragons"] = dragonArray;
   }
   localStorage.setItem('save', JSON.stringify(save));
 }
