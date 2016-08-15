@@ -392,4 +392,13 @@ function save() {
 function load() {
   save = JSON.parse(localStorage.getItem('save'))
   document.getElementById("plant_row").childNodes[3].innerHTML = save["boosts"]["plant"];
+  document.getElementById("fire_row").childNodes[3].innerHTML = save["boosts"]["fire"];
+  document.getElementById("lightning_row").childNodes[3].innerHTML = save["boosts"]["lightning"];
+  document.getElementById("air_row").childNodes[3].innerHTML = save["boosts"]["air"];
+  document.getElementById("metal_row").childNodes[3].innerHTML = save["boosts"]["metal"];
+  document.getElementById("cold_row").childNodes[3].innerHTML = save["boosts"]["cold"];
+  document.getElementById("water_row").childNodes[3].innerHTML = save["boosts"]["water"];
+  document.getElementById("earth_row").childNodes[3].innerHTML = save["boosts"]["earth"];
+  document.getElementById("dark_row").childNodes[3].innerHTML = save["boosts"]["dark"];
+  document.getElementById("light_row").childNodes[3].innerHTML = save["boosts"]["light"];
 }
