@@ -368,5 +368,5 @@ function save() {
   save["boosts"]["earth"] = document.getElementById("earth_row").childNodes[1].innerHTML
   save["boosts"]["light"] = document.getElementById("light_row").childNodes[1].innerHTML
   save["boosts"]["dark"] = document.getElementById("dark_row").childNodes[1].innerHTML
-  localStorage.setItem('save', save);
+  localStorage.setItem('save', JSON.stringify(save));
 }
