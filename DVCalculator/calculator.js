@@ -404,6 +404,9 @@ function load() {
   document.getElementById("light_row").childNodes[3].innerHTML = save["boosts"]["light"];
   
   for (i = 0; i < save["grouplist"].length; i++) {
-    console.log(save["grouplist"][i])
+    currentGroup = save["grouplist"][i];
+    if (document.getElementById(currentGroup) == undefined) {
+      addGroup();
+    }
   }
 }
