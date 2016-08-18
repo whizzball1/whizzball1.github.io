@@ -359,7 +359,7 @@ function checkBoostedEarning(dragonID, level) {
   }
   return boostedEarning;
 }
-function save() {
+function saveIsland() {
   var save = {}
   save["boosts"] = {}
   save["boosts"]["plant"] = document.getElementById("plant_row").childNodes[3].innerHTML
