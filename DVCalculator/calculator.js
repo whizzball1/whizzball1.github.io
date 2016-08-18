@@ -39,6 +39,7 @@ var currentID = 0
 var groupID = 0
 var groups = []
 var groupIDs = []
+var dragons = []
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
@@ -46,6 +47,7 @@ function tableAddDragon(type, level, group) {
   var newRow = document.createElement("tr");
   currentID++;
   newRow.id = "dragon" + currentID;
+  dragons.push("dragon" + currentID);
   var nameData = document.createElement("td");
   var idData = document.createElement("td");
   var levelData = document.createElement("td");
