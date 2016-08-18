@@ -49,6 +49,7 @@ function tableAddDragon(type, level, group) {
   currentID++;
   newRow.id = "dragon" + currentID;
   dragons.push("dragon" + currentID);
+  dragonIDs.push(currentID);
   var nameData = document.createElement("td");
   var idData = document.createElement("td");
   var levelData = document.createElement("td");
@@ -411,5 +412,10 @@ function load() {
     if (document.getElementById(currentGroup) == undefined) {
       addGroup();
     }
+  }
+  
+  for (i = 0; i < dragonIDs.length; i++) {
+    currentDragon = dragonIDs[i];
+    removeDragon(currentDragon);
   }
 }
