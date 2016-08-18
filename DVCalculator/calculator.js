@@ -423,7 +423,7 @@ function load() {
   for (i = 0; i < save["grouplist"].length; i++) {
     currentGroup = save["grouplist"][i];
     currentGroupID = parseInt(currentGroup.replace(/[group]/g, ""));
-    for (j = 0; j < save["groups"][currentGroup]["dragons"]; j++) {
+    for (j = 0; j < save["groups"][currentGroup]["dragons"].length; j++) {
       currentDragon = save["groups"][currentGroup]["dragons"][j]
       level = save["groups"][currentGroup][currentDragon][level];
       type = save["groups"][currentGroup][currentDragon][type];
