@@ -430,4 +430,5 @@ function load() {
       tableAddDragon(type, level, currentGroupID);
     }
   }
+  calculateBoostedEarning();
 }
