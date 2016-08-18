@@ -40,6 +40,7 @@ var groupID = 0
 var groups = []
 var groupIDs = []
 var dragons = []
+var dragonIDs = []
 function rateRetrieve(type, level) {
   return dragonDict[type][level]
 }
