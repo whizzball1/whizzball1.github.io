@@ -418,4 +418,5 @@ function load() {
     currentDragon = dragonIDs[i];
     removeDragon(currentDragon);
   }
+  currentID = 0;
 }
