@@ -407,24 +407,24 @@ function load() {
   document.getElementById("dark_row").childNodes[3].innerHTML = save["boosts"]["dark"];
   document.getElementById("light_row").childNodes[3].innerHTML = save["boosts"]["light"];
   
-  for (i = 0; i < save["grouplist"].length; i++) {
-    currentGroup = save["grouplist"][i];
+  for (a = 0; a < save["grouplist"].length; a++) {
+    currentGroup = save["grouplist"][a];
     if (document.getElementById(currentGroup) == undefined) {
       addGroup();
     }
   }
   
-  for (i = 0; i < dragonIDs.length; i++) {
-    currentDragon = dragonIDs[i];
+  for (b = 0; b < dragonIDs.length; b++) {
+    currentDragon = dragonIDs[b];
     removeDragon(currentDragon);
   }
   currentID = 0;
   
-  for (i = 0; i < save["grouplist"].length; i++) {
-    currentGroup = save["grouplist"][i];
+  for (c = 0; c < save["grouplist"].length; c++) {
+    currentGroup = save["grouplist"][c];
     currentGroupID = parseInt(currentGroup.replace(/[group]/g, ""));
-    for (j = 0; j < save["groups"][currentGroup]["dragons"].length; j++) {
-      currentDragon = save["groups"][currentGroup]["dragons"][j]
+    for (d = 0; d < save["groups"][currentGroup]["dragons"].length; d++) {
+      currentDragon = save["groups"][currentGroup]["dragons"][d]
       level = save["groups"][currentGroup][currentDragon]["level"];
       type = save["groups"][currentGroup][currentDragon]["type"];
       tableAddDragon(type, level, currentGroupID);
